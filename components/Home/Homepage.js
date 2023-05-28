@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
   Pressable,
 } from 'react-native';
-import {StyleSheet, ScrollView} from 'react-native';
+import {StyleSheet, ScrollView, SafeAreaView} from 'react-native';
 import HomepageCard from '../../subcomponents/HomepageCard';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -16,75 +16,123 @@ import Entypo from 'react-native-vector-icons/Entypo';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-
-
-const Homepage = ({navigation, route}) => {
+const Homepage = () => {
   return (
-    <View style={styles.Home}>
-      <Text style={styles.WelcomeRichardsFlore}>Welcome Richards Flores </Text>
-      <Image
-        style={styles.Group35315}
-        source={{
-          uri: 'https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/mhwg3kb6nm-6383%3A3034?alt=media&token=041e2ca5-fe54-4d4e-98ce-29a15d728879',
-        }}
-      />
-      <View style={styles.Group38197}>
+    <View style={{height: 707}}>
+      <View style={styles.Home}>
+        <Text style={styles.WelcomeRichardsFlore}>
+          Welcome Richards Flores{' '}
+        </Text>
         <Image
-          style={styles.Ellipse162}
+          style={styles.Group35315}
           source={{
-            uri: 'https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/mhwg3kb6nm-6383%3A3042?alt=media&token=0ae05abb-17a3-41fb-86b9-4a4fa8856618',
+            uri: 'https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/mhwg3kb6nm-6383%3A3034?alt=media&token=041e2ca5-fe54-4d4e-98ce-29a15d728879',
           }}
         />
-        <Text style={styles.Profile}>Profile</Text>
-      </View>
-
-      <View
-        style={{
-          width: 160,
-        }}>
-        <Text style={styles._2972WestheimerRdSan}>
-          2972 Westheimer Rd. Santa Ana Madurai , Tamilnadu
-        </Text>
-
-        <View style={styles.DownArrow}>
-          <AntDesign name="down" size={15} />
-        </View>
-      </View>
-      <View style={styles.SearchBar}>
-        <View style={styles.Input}>
+        <View style={styles.Group38197}>
           <Image
-            style={styles.Icon}
+            style={styles.Ellipse162}
             source={{
-              uri: 'https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/mhwg3kb6nm-6383%3A3058?alt=media&token=d7057d82-10a4-4914-b746-2e68dc9bb297',
+              uri: 'https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/mhwg3kb6nm-6383%3A3042?alt=media&token=0ae05abb-17a3-41fb-86b9-4a4fa8856618',
             }}
           />
-          <Text style={styles.Placeholder}>Search</Text>
+          <Text style={styles.Profile}>Profile</Text>
         </View>
 
-        <Ionicons name="filter" size={30} style={styles.RightIcon}></Ionicons>
-      </View>
-      <View>
-        <Text style={styles.NearbyYourLocation}>Nearby your location</Text>
-      </View>
-      <View style={styles.Group38196}>
-        <View style={styles.Frame18790}>
-          <Text style={styles.All}>All</Text>
-        </View>
+        <View
+          style={{
+            width: 160,
+          }}>
+          <Text style={styles._2972WestheimerRdSan}>
+            2972 Westheimer Rd. Santa Ana Madurai , Tamilnadu
+          </Text>
 
-        <View style={styles.Frame18791}>
-          <Text style={styles.Football}>Football</Text>
+          <View style={styles.DownArrow}>
+            <AntDesign name="down" size={15} />
+          </View>
         </View>
-        <View style={styles.Frame18792}>
-          <Text style={styles.Cricket}>Cricket</Text>
-        </View>
-        <View style={styles.Frame18793}>
-          <Text style={styles.Tennis}>Tennis</Text>
-        </View>
-      </View>
-      <Button onPress={() => navigation.navigate('Payment')}>Click</Button>
+        <View style={styles.SearchBar}>
+          <View style={styles.Input}>
+            <Image
+              style={styles.Icon}
+              source={{
+                uri: 'https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/mhwg3kb6nm-6383%3A3058?alt=media&token=d7057d82-10a4-4914-b746-2e68dc9bb297',
+              }}
+            />
+            <Text style={styles.Placeholder}>Search</Text>
+          </View>
 
-      <ScrollView>
-        <View style={{marginTop: 220}}>
+          <Ionicons name="filter" size={30} style={styles.RightIcon}></Ionicons>
+        </View>
+        <View>
+          <Text style={styles.NearbyYourLocation}>Nearby your location</Text>
+        </View>
+        <View style={styles.Group38196}>
+          <View style={styles.Frame18790}>
+            <Text style={styles.All}>All</Text>
+          </View>
+
+          <View style={styles.Frame18791}>
+            <Text style={styles.Football}>Football</Text>
+          </View>
+          <View style={styles.Frame18792}>
+            <Text style={styles.Cricket}>Cricket</Text>
+          </View>
+          <View style={styles.Frame18793}>
+            <Text style={styles.Tennis}>Tennis</Text>
+          </View>
+        </View>
+        <Button onPress={() => navigation.navigate('Payment')}>Click</Button>
+      </View>
+
+      <ScrollView style={{flex: 1, backgroundColor: 'red'}}>
+        <View style={{flex: 1, justifyContent: 'center'}}>
+          <HomepageCard
+            source={require('../../assets/Homepage/ground.png')}
+            Km="2.7 km"
+            DayNight="Day & Night "
+            Time="8AM - 8PM | Mon - Sun"
+            BillAmount="₹1000"
+            Football="soccer-ball-o"
+            Cricket="sports-cricket"
+            Tennis="sports-tennis"></HomepageCard>
+
+          <HomepageCard
+            source={require('../../assets/Homepage/ground.png')}
+            Km="2.7 km"
+            DayNight="Day & Night "
+            Time="8AM - 8PM | Mon - Sun"
+            BillAmount="₹1000"
+            Football="soccer-ball-o"
+            Cricket="sports-cricket"
+            Tennis="sports-tennis"></HomepageCard>
+          <HomepageCard
+            source={require('../../assets/Homepage/ground.png')}
+            Km="2.7 km"
+            DayNight="Day & Night "
+            Time="8AM - 8PM | Mon - Sun"
+            BillAmount="₹1000"
+            Football="soccer-ball-o"
+            Cricket="sports-cricket"
+            Tennis="sports-tennis"></HomepageCard>
+          <HomepageCard
+            source={require('../../assets/Homepage/ground.png')}
+            Km="2.7 km"
+            DayNight="Day & Night "
+            Time="8AM - 8PM | Mon - Sun"
+            BillAmount="₹1000"
+            Football="soccer-ball-o"
+            Cricket="sports-cricket"
+            Tennis="sports-tennis"></HomepageCard>
+          <HomepageCard
+            source={require('../../assets/Homepage/ground.png')}
+            Km="2.7 km"
+            DayNight="Day & Night "
+            Time="8AM - 8PM | Mon - Sun"
+            BillAmount="₹1000"
+            Football="soccer-ball-o"
+            Cricket="sports-cricket"
+            Tennis="sports-tennis"></HomepageCard>
           <HomepageCard
             source={require('../../assets/Homepage/ground.png')}
             Km="2.7 km"
@@ -95,32 +143,11 @@ const Homepage = ({navigation, route}) => {
             Cricket="sports-cricket"
             Tennis="sports-tennis"></HomepageCard>
         </View>
-        <View style={{marginTop: 20, marginBottom: 20}}>
-          <HomepageCard
-            source={require('../../assets/Homepage/ground.png')}
-            Km="3.5 km"
-            DayNight="Day & Night "
-            Time="7AM - 9PM | Mon - Sun"
-            BillAmount="₹2000"
-            Football="soccer-ball-o"
-            Cricket="sports-cricket"
-            Tennis="sports-tennis"></HomepageCard>
-        </View>
-        <View style={{ marginBottom: 20}}>
-          <HomepageCard
-            source={require('../../assets/Homepage/ground.png')}
-            Km="3.5 km"
-            DayNight="Day & Night "
-            Time="7AM - 9PM | Mon - Sun"
-            BillAmount="₹2000"
-            Football="soccer-ball-o"
-            Cricket="sports-cricket"
-            Tennis="sports-tennis"></HomepageCard>
-        </View>
       </ScrollView>
+    </View>
 
-      {/* <View style={styles.Navbar}>
-        <AntDesign
+    /* <View style={styles.Navbar}>
+       <AntDesign
           name="Trophy"
           size={30}
           style={{marginLeft: 25, marginTop: 10, color: '#000000'}}></AntDesign>
@@ -144,8 +171,8 @@ const Homepage = ({navigation, route}) => {
           name="bell"
           size={40}
           style={{marginLeft: 50, marginTop: 10, color: '#000000'}}></EvilIcons>
-      </View> */}
-        <View style={styles.BottomNavType2}>
+      </View>  */
+    /* <View style={styles.BottomNavType2}>
       <View style={styles.Type}>
         <Image
           style={styles.EpTrophyBase}
@@ -179,8 +206,7 @@ const Homepage = ({navigation, route}) => {
           uri: "https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/tv09an5pdld-6751%3A4224?alt=media&token=19257b01-5179-49e9-99e6-53f3dab1b09a",
         }}
       />
-    </View>
-    </View>
+    </View>  */
   );
 };
 export default Homepage;
@@ -192,7 +218,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
     width: '100%',
-    height: 670,
+    height: 260,
     boxSizing: 'border-box',
     backgroundColor: '#E5E5E5',
   },
@@ -326,7 +352,7 @@ const styles = StyleSheet.create({
     left: 20.7,
     display: 'flex',
     flexDirection: 'row',
-    width: 250.79,
+    width: 150.79,
     height: 21,
     boxSizing: 'border-box',
   },
@@ -437,68 +463,83 @@ const styles = StyleSheet.create({
     display: 'flex',
   },
 
-
-
-
   BottomNavType2: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
     width: 359.77,
-    
-    boxSizing: "border-box",
-    backgroundColor: "rgba(255,255,255,1)",
+
+    boxSizing: 'border-box',
+    backgroundColor: 'rgba(255,255,255,1)',
   },
   Type: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "center",
-    height: "100%",
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    height: '100%',
     marginRight: 20.756010055541992,
     paddingLeft: 9.51,
     paddingRight: 12.97,
     paddingTop: 6.05,
     paddingBottom: 6.05,
     borderRadius: 51.89,
-    boxSizing: "border-box",
-    backgroundColor: "rgba(95,208,104,1)",
+    boxSizing: 'border-box',
+    backgroundColor: 'rgba(95,208,104,1)',
   },
   EpTrophyBase: {
     width: 16.62,
-    height: "100%",
+    height: '100%',
     marginRight: 6.918670177459717,
   },
   Tournament: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    color: "rgba(255,255,255,1)",
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    color: 'rgba(255,255,255,1)',
     fontSize: 11,
     lineHeight: 133,
-    fontFamily: "Nunito, sans-serif",
+    fontFamily: 'Nunito, sans-serif',
     fontWeight: 700,
-    textAlign: "center",
+    textAlign: 'center',
     letterSpacing: 0.2,
   },
   Type1: {
     width: 31.97,
-    height: "100%",
+    height: '100%',
     marginRight: 20.756010055541992,
   },
   Type2: {
     width: 30.02,
-    height: "100%",
+    height: '100%',
     marginRight: 20.756010055541992,
   },
   Type3: {
     width: 31.97,
-    height: "100%",
+    height: '100%',
     marginRight: 20.756010055541992,
   },
   Type4: {
     width: 31.97,
-    height: "100%",
+    height: '100%',
+  },
+
+  scrollView: {
+    height: '20%',
+    width: '80%',
+    margin: 20,
+    alignSelf: 'center',
+    padding: 20,
+    borderWidth: 5,
+    borderRadius: 5,
+    borderColor: 'black',
+    backgroundColor: 'lightblue',
+  },
+  contentContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'lightgrey',
+    paddingBottom: 50,
   },
 });

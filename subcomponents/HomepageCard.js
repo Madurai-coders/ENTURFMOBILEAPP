@@ -8,6 +8,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 const HomepageCard = props => {
   return (
     <>
+   
         <View style={styles.Group153}>
           <Image style={styles.Image422} source={props.source} />
           <View style={styles.Group882}>
@@ -24,7 +25,7 @@ const HomepageCard = props => {
             </Text>
           </View>
           <View style={styles.games}>
-            <FontAwesome name={props.Football}size={17} />
+            <FontAwesome name={props.Football} size={17} />
             <MaterialIcons
               name={props.Cricket}
               size={22}
@@ -47,8 +48,6 @@ const HomepageCard = props => {
             />
           </View>
         </View>
-
-      
     </>
   );
 };
@@ -57,7 +56,7 @@ export default HomepageCard;
 
 const styles = StyleSheet.create({
   Group153: {
-    width: 386,
+    width: 340,
     height: 122,
     borderRadius: 26.81,
     boxSizing: 'border-box',
@@ -67,7 +66,8 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 3,
     elevation: 10,
-    marginLeft: 10,
+    marginTop:30,
+    marginLeft:7
   },
 
   Image422: {
@@ -170,7 +170,7 @@ const styles = StyleSheet.create({
     height: 62,
     backgroundColor: '#C6FFCA',
     position: 'absolute',
-    left: "89%",
+    left: '89%',
     borderTopRightRadius: 16,
   },
   rect2: {
@@ -179,7 +179,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#5FD068',
     position: 'absolute',
     top: 62,
-    left: "89%",
+    left: '89%',
     borderBottomRightRadius: 16,
   },
   hearticon: {
