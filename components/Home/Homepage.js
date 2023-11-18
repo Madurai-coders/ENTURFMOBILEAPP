@@ -7,6 +7,7 @@ import {
   ImageBackground,
   TouchableOpacity,
   Pressable,
+  TextInput,
 } from 'react-native';
 import {StyleSheet, ScrollView, SafeAreaView} from 'react-native';
 import HomepageCard from '../../subcomponents/HomepageCard';
@@ -15,55 +16,67 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import Entypo from 'react-native-vector-icons/Entypo';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-
+import Feather from 'react-native-vector-icons/Feather';
 const Homepage = () => {
   return (
-    <View style={{height: 707}}>
-      <View style={styles.Home}>
-        <Text style={styles.WelcomeRichardsFlore}>
-          Welcome Richards Flores{' '}
-        </Text>
-        <Image
-          style={styles.Group35315}
-          source={{
-            uri: 'https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/mhwg3kb6nm-6383%3A3034?alt=media&token=041e2ca5-fe54-4d4e-98ce-29a15d728879',
-          }}
-        />
-        <View style={styles.Group38197}>
+    <View style={{height: '100%', backgroundColor: 'white'}}>
+      <View style={styles.topbox}>
+        <View style={styles.topcontent}>
+          <Text style={styles.WelcomeRichardsFlore}>
+            Welcome Richards Flores
+          </Text>
           <Image
-            style={styles.Ellipse162}
+            style={styles.Group35315}
             source={{
-              uri: 'https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/mhwg3kb6nm-6383%3A3042?alt=media&token=0ae05abb-17a3-41fb-86b9-4a4fa8856618',
+              uri: 'https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/mhwg3kb6nm-6383%3A3034?alt=media&token=041e2ca5-fe54-4d4e-98ce-29a15d728879',
             }}
           />
-          <Text style={styles.Profile}>Profile</Text>
-        </View>
-
-        <View
-          style={{
-            width: 160,
-          }}>
-          <Text style={styles._2972WestheimerRdSan}>
-            2972 Westheimer Rd. Santa Ana Madurai , Tamilnadu
-          </Text>
-
-          <View style={styles.DownArrow}>
-            <AntDesign name="down" size={15} />
+          <View
+            style={{
+              width: '60%',
+              flexDirection: 'row',
+            }}>
+            <Text style={styles._2972WestheimerRdSan}>
+              2972 Westheimer Rd. Santa Ana Madurai , Tamilnadu
+              <AntDesign
+                name="down"
+                size={16}
+                color={'black'}
+                style={styles.down}
+              />
+            </Text>
           </View>
         </View>
-        <View style={styles.SearchBar}>
-          <View style={styles.Input}>
+        <View style={styles.topcontent1}>
+          <View style={styles.profilebox}>
             <Image
-              style={styles.Icon}
+              style={styles.Ellipse162}
               source={{
-                uri: 'https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/mhwg3kb6nm-6383%3A3058?alt=media&token=d7057d82-10a4-4914-b746-2e68dc9bb297',
+                uri: 'https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/mhwg3kb6nm-6383%3A3042?alt=media&token=0ae05abb-17a3-41fb-86b9-4a4fa8856618',
               }}
             />
-            <Text style={styles.Placeholder}>Search</Text>
+            <Text style={styles.Profile}>Profile</Text>
           </View>
+        </View>
+      </View>
 
+      <View style={styles.middlebox}>
+        <View style={styles.middlecontent}>
+          <View style={styles.searchSection}>
+            <TextInput
+              style={styles.input}
+              placeholder="Search"
+              
+              placeholderTextColor={'#999999'}
+            />
+            <Feather name="search" size={19} style={styles.searchIcon} />
+          </View>
+        </View>
+        <View style={styles.middlecontent1}>
           <Ionicons name="filter" size={30} style={styles.RightIcon}></Ionicons>
         </View>
+      </View>
+      <View style={styles.bottombox}>
         <View>
           <Text style={styles.NearbyYourLocation}>Nearby your location</Text>
         </View>
@@ -82,10 +95,8 @@ const Homepage = () => {
             <Text style={styles.Tennis}>Tennis</Text>
           </View>
         </View>
-        <Button onPress={() => navigation.navigate('Payment')}>Click</Button>
       </View>
-
-      <ScrollView style={{flex: 1, backgroundColor: 'red'}}>
+      <ScrollView style={{flex: 1, backgroundColor: '#F9F9F9'}}>
         <View style={{flex: 1, justifyContent: 'center'}}>
           <HomepageCard
             source={require('../../assets/Homepage/ground.png')}
@@ -146,104 +157,54 @@ const Homepage = () => {
       </ScrollView>
     </View>
 
-    /* <View style={styles.Navbar}>
-       <AntDesign
-          name="Trophy"
-          size={30}
-          style={{marginLeft: 25, marginTop: 10, color: '#000000'}}></AntDesign>
-        <MaterialCommunityIcons
-          name="youtube-subscription"
-          size={30}
-          style={{
-            marginLeft: 50,
-            marginTop: 10,
-            color: '#000000',
-          }}></MaterialCommunityIcons>
-        <AntDesign
-          name="home"
-          size={30}
-          style={{marginLeft: 50, marginTop: 10, color: '#5FD068'}}></AntDesign>
-        <Entypo
-          name="back-in-time"
-          size={32}
-          style={{marginLeft: 50, marginTop: 10, color: '#000000'}}></Entypo>
-        <EvilIcons
-          name="bell"
-          size={40}
-          style={{marginLeft: 50, marginTop: 10, color: '#000000'}}></EvilIcons>
-      </View>  */
-    /* <View style={styles.BottomNavType2}>
-      <View style={styles.Type}>
-        <Image
-          style={styles.EpTrophyBase}
-          source={{
-            uri: "https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/tv09an5pdld-6751%3A4211?alt=media&token=23749520-52a8-4b6c-9be7-6e8a4fe1dcd1",
-          }}
-        />
-        <Text style={styles.Tournament}>Tournament</Text>
-      </View>
-      <Image
-        style={styles.Type1}
-        source={{
-          uri: "https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/tv09an5pdld-6751%3A4214?alt=media&token=2d4e0d9d-2c11-4a5a-958d-b7aa75e734a5",
-        }}
-      />
-      <Image
-        style={styles.Type2}
-        source={{
-          uri: "https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/tv09an5pdld-6751%3A4217?alt=media&token=39bdbe9b-14a7-43a6-a0e5-662e0b6ac31c",
-        }}
-      />
-      <Image
-        style={styles.Type3}
-        source={{
-          uri: "https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/tv09an5pdld-6751%3A4220?alt=media&token=56d1876a-5834-4508-a6e6-adf986bffa81",
-        }}
-      />
-      <Image
-        style={styles.Type4}
-        source={{
-          uri: "https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/tv09an5pdld-6751%3A4224?alt=media&token=19257b01-5179-49e9-99e6-53f3dab1b09a",
-        }}
-      />
-    </View>  */
+   
   );
 };
 export default Homepage;
 
 const styles = StyleSheet.create({
-  Home: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start',
+  topbox: {
     width: '100%',
-    height: 260,
-    boxSizing: 'border-box',
-    backgroundColor: '#E5E5E5',
+    height: '20%',
+    padding: 5,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    backgroundColor: '#F9F9F9',
   },
-
+  topcontent: {
+    width: '80%',
+    height: '100%',
+    paddingLeft: 12,
+    paddingTop: 10,
+  },
   WelcomeRichardsFlore: {
-    position: 'absolute',
-    left: 18,
     color: 'rgba(62,62,62,1)',
     fontSize: 21,
-    lineHeight: 80,
+    lineHeight: 50,
     fontFamily: 'Nunito, sans-serif',
     fontWeight: 600,
   },
-  Group38197: {
-    position: 'absolute',
-    top: 23.69,
-    left: 334,
-    display: 'flex',
-    flexDirection: 'column',
+  _2972WestheimerRdSan: {
+    color: 'rgba(0,0,0,1)',
+    fontSize: 11,
+    lineHeight: 15,
+    fontFamily: 'Nunito, sans-serif',
+    fontWeight: 400,
+    letterSpacing: 0.4,
+    textTransform: 'capitalize',
+    marginTop: -5,
+  },
+
+  topcontent1: {
+    width: '20%',
+    height: '100%',
+    paddingTop: 20,
+  },
+  profilebox: {
+    justifyContent: 'center',
     alignItems: 'center',
-    width: 49.94,
-    height: 63.03,
-    paddingLeft: 8,
-    paddingRight: 7.94,
-    paddingTop: 7,
+    width: 60,
+    height: 70,
     paddingBottom: 5.03,
     borderRadius: 9,
     boxSizing: 'border-box',
@@ -255,89 +216,82 @@ const styles = StyleSheet.create({
     elevation: 11,
   },
   Ellipse162: {
-    width: '100%',
-    height: 34.93,
+    width: '70%',
+    height: 42,
+    marginTop: 5,
   },
   Profile: {
     color: 'rgba(0,0,0,1)',
     fontSize: 10,
-    lineHeight: 16,
+    lineHeight: 12,
     fontFamily: 'Nunito, sans-serif',
     fontWeight: 500,
     letterSpacing: 0.45,
     textTransform: 'capitalize',
+    marginTop: 5,
   },
-  _2972WestheimerRdSan: {
-    position: 'absolute',
-    top: 60.92,
-    left: 20.07,
-    color: 'rgba(0,0,0,1)',
-    fontSize: 11,
-    lineHeight: 15,
-    fontFamily: 'Nunito, sans-serif',
-    fontWeight: 400,
-    letterSpacing: 0.4,
-    textTransform: 'capitalize',
-  },
-  DownArrow: {
-    position: 'absolute',
-    top: 78,
-    left: 155,
-  },
-  SearchBar: {
-    position: 'absolute',
-    top: 100,
-    display: 'flex',
+  middlebox: {
+    width: '100%',
+    height: '12%',
+    padding: 5,
     flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: 355,
-    height: 63.29,
-    paddingLeft: 14.83,
-    paddingRight: 6.92,
-    paddingTop: 8.9,
-    paddingBottom: 8.9,
-    boxSizing: 'border-box',
+    flexWrap: 'wrap',
+    backgroundColor: '#F9F9F9',
   },
-  Input: {
-    display: 'flex',
+  middlecontent: {
+    height: '20%',
+    width: '84%',
+    marginLeft: 10,
+  },
+  searchSection: {
+    // flex: 1,
     flexDirection: 'row',
-    justifyContent: 'flex-start',
-    alignItems: 'center',
-    width: 340,
-    height: '100%',
-    paddingLeft: 9.89,
-    paddingRight: 9.89,
-    paddingTop: 5.93,
-    paddingBottom: 5.93,
+    position:"absolute",
+    top:0,
+    bottom:0,
+    left:0,
+    right:0,
+    alignSelf:"center",            
+    borderRadius:10,
+    backgroundColor:'#fff',   
+  },
+  searchIcon: {
+    padding: 0,
+    color: '#999999',
+    marginTop: 15,
+    marginLeft: 17,
+    zIndex: 1,
+    position: 'absolute',
+  },
+  input: {
+    flex: 1,
+    paddingLeft: 45,
+    fontSize: 17,
+    width: '96%',
+    backgroundColor: '#FFFFFF',
+    color: 'black',
+    borderRadius: 32,
     borderWidth: 0.99,
     borderColor: 'rgba(235,235,235,1)',
-    borderRadius: 98.89,
-    boxSizing: 'border-box',
-    backgroundColor: 'rgb(255,255,255)',
-    marginLeft: 55,
+    position: 'absolute',
+    fontfamily: 'Nunito',
+    fontweight: 400,
+    height:40,
+    display:"flex"
   },
-  Icon: {
-    width: 23.73,
-    height: '100%',
-    marginRight: 7.911110877990723,
-  },
-  Placeholder: {
-    color: 'rgba(153,153,153,1)',
-    fontSize: 16,
-    lineHeight: 16,
-    fontFamily: 'Nunito, sans-serif',
-    fontWeight: 400,
-  },
+
   RightIcon: {
-    marginLeft: 15,
+    marginTop: 7,
     color: '#000000',
   },
+  bottombox: {
+    width: '100%',
+    height: '11%',
+    paddingLeft: 20,
+    backgroundColor: '#F9F9F9',
+  },
   NearbyYourLocation: {
-    position: 'absolute',
-    top: 170,
-    left: 20.7,
-    color: 'rgba(0,0,0,1)',
+    color: '#000000',
     fontSize: 13,
     lineHeight: 15,
     fontFamily: 'Nunito, sans-serif',
@@ -347,9 +301,7 @@ const styles = StyleSheet.create({
   },
 
   Group38196: {
-    position: 'absolute',
-    top: 205,
-    left: 20.7,
+    marginTop: 20,
     display: 'flex',
     flexDirection: 'row',
     width: 150.79,

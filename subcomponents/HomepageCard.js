@@ -25,16 +25,18 @@ const HomepageCard = props => {
             </Text>
           </View>
           <View style={styles.games}>
-            <FontAwesome name={props.Football} size={17} />
+            <FontAwesome name={props.Football} size={17} color={"#57575B"} />
             <MaterialIcons
               name={props.Cricket}
               size={22}
-              style={{marginLeft: 10}}
+              color={"#57575B"} 
+              style={{marginLeft: 10,marginTop:-3}}
             />
             <MaterialIcons
               name={props.Tennis}
               size={22}
-              style={{marginLeft: 10}}
+              color={"#57575B"} 
+              style={{marginLeft: 10,marginTop:-3}}
             />
           </View>
           <View style={styles.rect1}>
@@ -56,7 +58,6 @@ export default HomepageCard;
 
 const styles = StyleSheet.create({
   Group153: {
-    width: 340,
     height: 122,
     borderRadius: 26.81,
     boxSizing: 'border-box',
@@ -66,8 +67,10 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 3,
     elevation: 10,
-    marginTop:30,
-    marginLeft:7
+    marginTop:20,
+    marginLeft:7,
+    marginRight:7,
+    marginBottom:10
   },
 
   Image422: {

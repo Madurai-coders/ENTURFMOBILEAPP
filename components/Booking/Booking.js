@@ -3,15 +3,12 @@ import {StyleSheet} from 'react-native';
 import PaymentCard from '../../subcomponents/paymentcard';
 import { Button} from 'native-base';
 
-const Booking = ({navigation,route}) => {
+const Booking = ({navigation}) => {
+ 
+
   return (
     <View style={styles.Transactions}>
-      <Button
-        onPress={() => navigation.navigate('BookingDetail')}
-        style={{marginTop: 10}}>
-        BookingDetails
-      </Button>
-
+     
       <ScrollView>
         <PaymentCard
           Day="Today"
@@ -115,16 +112,15 @@ const styles = StyleSheet.create({
     top: 55,
   },
   Completed: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'flex-end',
+   
     color: 'rgba(95,208,104,1)',
     fontSize: 11,
-    lineHeight: 15,
+    lineHeight: 20,
     fontFamily: 'Nunito, sans-serif',
     fontWeight: 400,
     textAlign: 'right',
     letterSpacing: 0.3,
+
   },
   Failed: {
     display: 'flex',
@@ -132,11 +128,12 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     color: 'rgba(255,112,112,1)',
     fontSize: 11,
-    lineHeight: 10,
+    lineHeight: 20,
     fontFamily: 'Nunito, sans-serif',
     fontWeight: 400,
     textAlign: 'right',
     letterSpacing: 0.3,
+
   },
   Refunded: {
     display: 'flex',
@@ -144,10 +141,11 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     color: 'rgba(255,210,52,1)',
     fontSize: 11,
-    lineHeight: 10,
+    lineHeight: 20,
     fontFamily: 'Nunito, sans-serif',
     fontWeight: 400,
     textAlign: 'right',
     letterSpacing: 0.3,
+
   },
 });

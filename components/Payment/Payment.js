@@ -1,16 +1,24 @@
 import React from 'react';
-import {Button} from 'native-base';
-import {Image, Text, View, ImageBackground, Pressable} from 'react-native';
+// import {Button} from 'native-base';
+import {Image, Text, View, ImageBackground, Pressable,Button} from 'react-native';
 import {StyleSheet, ScrollView} from 'react-native';
 import PaymentCard from '../../subcomponents/paymentcard';
-const Payment = ({navigation, route}) => {
+import { useNavigation } from '@react-navigation/native';
+import PaymentDetail from './PaymentDetail';
+
+
+
+const Payment = ({navigation}) => {
+
   return (
     <View style={styles.Transactions}>
      <Button
-        onPress={() => navigation.navigate('PaymentDetail')}
-        style={{marginTop: 10}}>
-      PaymentDetails
-      </Button>
+      title="Go to Jane's profile"
+      onPress={() =>
+        navigation.navigate('Detail')
+      }
+    />
+
       <ScrollView>
         <PaymentCard
           Day="Today"
@@ -55,7 +63,7 @@ const Payment = ({navigation, route}) => {
             UpdateAmountStatus="Completed"
             styles={styles.Completed}></PaymentCard>
         </View>
-        <View style={{marginTop: 10, marginBottom: 100}}>
+        <View style={{marginTop: 10, marginBottom: 10}}>
           <PaymentCard
             Day="Dec 25,2022"
             uri="https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/dcpdwi7i9dq-6761%3A3048?alt=media&token=ca0b3877-b908-43c5-a577-222dad59d7c5"
@@ -78,7 +86,6 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
     width: '100%',
-    height: 707,
     paddingLeft: 10.16,
     paddingRight: 10.16,
     paddingTop: 10.16,

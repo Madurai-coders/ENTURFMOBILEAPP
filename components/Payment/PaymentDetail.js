@@ -3,23 +3,24 @@ import {Button} from 'native-base';
 import {Image, Text, View, ImageBackground, Pressable} from 'react-native';
 import {StyleSheet, ScrollView} from 'react-native';
 import PaymentDetailCard from '../../subcomponents/PaymentDetailCard';
+import {useNavigation} from '@react-navigation/native';
 
 const PaymentDetail = ({navigation, route}) => {
   return (
     <View style={styles.Transactions}>
       <View style={styles.Group707}>
         <View style={styles.Group717}>
-          <Pressable onPress={() => navigation.navigate('Payment')}>
+          {/* <Pressable onPress={() => navigation.navigate('Payment')}> */}
             <Image
               style={styles.Back}
               source={{
                 uri: 'https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/1zqka2hb0fl-6761%3A3121?alt=media&token=cf8d1414-473c-4015-9812-b4ff37b1d64e',
               }}
             />
-          </Pressable>
+          {/* </Pressable> */}
           <Text style={styles.History}>PaymentHistory</Text>
         </View>
-       
+
         <ScrollView>
           <PaymentDetailCard
             Day="Today"
@@ -31,6 +32,7 @@ const PaymentDetail = ({navigation, route}) => {
             Mode="Online"
             Paid="500"
             Id="rsyqsk861ks8"
+            BookingId="rsyqsk861ks8"
             styles={styles.Completed}></PaymentDetailCard>
         </ScrollView>
       </View>
@@ -66,7 +68,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     width: '100%',
-    height:70,
+    height: 70,
     boxSizing: 'border-box',
   },
 
@@ -103,39 +105,37 @@ const styles = StyleSheet.create({
   Completed: {
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'flex-end',
+    justifyContent: 'flex-start',
     color: 'rgba(95,208,104,1)',
     fontSize: 11,
-    lineHeight: 20,
+    lineHeight: 25,
     fontFamily: 'Nunito, sans-serif',
     fontWeight: 400,
-    textAlign: 'right',
+    textAlign: 'left',
     letterSpacing: 0.3,
-    position: 'absolute',
-    top: 55,
   },
   Failed: {
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'flex-end',
-    color: 'rgba(255,112,112,1)',
+    justifyContent: 'flex-start',
+    color: 'rgba(95,208,104,1)',
     fontSize: 11,
-    lineHeight: 10,
+    lineHeight: 25,
     fontFamily: 'Nunito, sans-serif',
     fontWeight: 400,
-    textAlign: 'right',
+    textAlign: 'left',
     letterSpacing: 0.3,
   },
   Refunded: {
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'flex-end',
-    color: 'rgba(255,210,52,1)',
+    justifyContent: 'flex-start',
+    color: 'rgba(95,208,104,1)',
     fontSize: 11,
-    lineHeight: 10,
+    lineHeight: 25,
     fontFamily: 'Nunito, sans-serif',
     fontWeight: 400,
-    textAlign: 'right',
+    textAlign: 'left',
     letterSpacing: 0.3,
   },
 });

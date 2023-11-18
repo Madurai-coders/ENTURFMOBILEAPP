@@ -1,32 +1,38 @@
 import React from 'react';
 import {Button} from 'native-base';
-import {Image, Text, View, ImageBackground,Pressable} from 'react-native';
+import {Image, Text, View, ImageBackground, Pressable} from 'react-native';
 import {StyleSheet, ScrollView} from 'react-native';
 import BookingDetailCard from '../../subcomponents/BookingDetailCard';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
-const BookingDetail = ({navigation,route}) => {
+const BookingDetail = ({navigation, route}) => {
   return (
-
     <View style={styles.Transactions}>
       <View style={styles.Group707}>
-        <View style={styles.Group717}>
-        <Pressable onPress={() => navigation.navigate('Bookings')}>
-
-          <Image
-            style={styles.Back}
-            source={{
-              uri: 'https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/1zqka2hb0fl-6761%3A3121?alt=media&token=cf8d1414-473c-4015-9812-b4ff37b1d64e',
-            }}
-          />
-          </Pressable>
-          <Text style={styles.History}>BookingHistory</Text>
+        <View
+          style={{
+            height: '10%',
+            width: '100%',
+            flexDirection: 'row',
+          }}>
+          <View style={{marginTop: 18, marginLeft: 15, width: '20%'}}>
+            <AntDesign name="left" size={25} color={'#3A3A3A'}></AntDesign>
+          </View>
+          <View
+            style={{
+              width: '60%',
+              marginTop: 3,
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}>
+            <Text style={styles.notificationtitle}>BookingHistory</Text>
+          </View>
         </View>
-      
+
         <ScrollView>
           <BookingDetailCard
-           
-           uri="https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/bq0sbwauwoj-7000%3A3359?alt=media&token=e038ed25-8df8-4896-a56d-d80ecfefaac6"
-           GroundName="Hatric Sports Arena"
+            uri="https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/bq0sbwauwoj-7000%3A3359?alt=media&token=e038ed25-8df8-4896-a56d-d80ecfefaac6"
+            GroundName="Hatric Sports Arena"
             Hours="6 hours ago"
             Amount=" ₹1400"
             UpdateAmountStatus="Completed"
@@ -34,8 +40,7 @@ const BookingDetail = ({navigation,route}) => {
             Id="rsyqsk861ks8"
             BookingId="igtD861ks8"
             styles={styles.Completed}></BookingDetailCard>
-            
-            </ScrollView>
+        </ScrollView>
       </View>
     </View>
   );
@@ -44,37 +49,30 @@ export default BookingDetail;
 
 const styles = StyleSheet.create({
   Transactions: {
-    display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
-    width: '100%',
-    height: 707,
-    paddingLeft: 10.16,
-    paddingRight: 10.16,
-    paddingTop: 10.16,
-    paddingBottom: 60.16,
-    boxSizing: 'border-box',
     backgroundColor: 'rgba(255,255,255,1)',
   },
-  Group707: {
-    display: 'flex',
-    flexDirection: 'column',
-    width: '100%',
-    height: '100%',
-    boxSizing: 'border-box',
-  },
+ 
   Group717: {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
     width: '100%',
-    height:70,
+    height: 70,
 
     boxSizing: 'border-box',
   },
+  notificationtitle: {
+    fontFamily: 'Nunito',
+    fontWeight: 600,
+    fontSize: 20,
+    lineHeight: 20,
+    letterSpacing: 1,
+    color: '#222222',
+  },
 
- 
   Back: {
     width: 50,
     height: '30%',
@@ -127,44 +125,43 @@ const styles = StyleSheet.create({
   Group5: {
     width: '100%',
     height: 4,
-    marginTop:20,
+    marginTop: 20,
   },
   Completed: {
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'flex-end',
+    justifyContent: 'flex-start',
     color: 'rgba(95,208,104,1)',
     fontSize: 11,
-    lineHeight: 20,
+    lineHeight: 25,
     fontFamily: 'Nunito, sans-serif',
     fontWeight: 400,
-    textAlign: 'right',
+    textAlign: 'left',
     letterSpacing: 0.3,
-    position:"absolute",
-    top:55,
+   
   },
   Failed: {
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'flex-end',
+    justifyContent: 'flex-start',
     color: 'rgba(255,112,112,1)',
     fontSize: 11,
-    lineHeight: 10,
+    lineHeight: 25,
     fontFamily: 'Nunito, sans-serif',
     fontWeight: 400,
-    textAlign: 'right',
+    textAlign: 'left',
     letterSpacing: 0.3,
   },
   Refunded: {
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'flex-end',
+    justifyContent: 'flex-start',
     color: 'rgba(255,210,52,1)',
     fontSize: 11,
-    lineHeight: 10,
+    lineHeight: 25,
     fontFamily: 'Nunito, sans-serif',
     fontWeight: 400,
-    textAlign: 'right',
+    textAlign: 'left',
     letterSpacing: 0.3,
   },
 });

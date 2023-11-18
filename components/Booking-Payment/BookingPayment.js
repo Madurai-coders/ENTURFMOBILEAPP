@@ -43,10 +43,11 @@ const BookingPayment = ({navigation, route}) => {
               fontWeight: 700,
               color: 'rgba(23,23,23,1)',
               textTransform: 'capitalize',
+              width:"100%"
             },
-            tabBarItemStyle: {width: 180, marginTop: 20, marginBottom: 13},
+            tabBarItemStyle: {marginTop: 20, marginBottom: 13},
             tabBarStyle: {backgroundColor: 'white'},
-            tabBarIndicatorStyle: {backgroundColor: '#5FD068'},
+            tabBarIndicatorStyle: {backgroundColor: '#5FD068',width:"50%"},
           }}>
           <Tab.Screen name="Booking" component={HomeScreen}></Tab.Screen>
           <Tab.Screen name="Payment" component={Setting}></Tab.Screen>
