@@ -33,7 +33,7 @@ Navbar--------->nav.js----> navigation focused Style pending (alter background)
 
   Home folder:
    * Homepage.js--->when search input box clicked ....keyboard shown other 
-   section postion changed(error unsolve)
+   section postion changed(error unsolved)
 
   History folder:
    * BookingPayment.js-------->Switchable type Booking nd Payment code 
@@ -43,10 +43,10 @@ Navbar--------->nav.js----> navigation focused Style pending (alter background)
 
 
    Booking folder:
-     *Bookingdetail.js---->code completed,navigate prblm(error unsolve)
+     *Bookingdetail.js---->code completed,navigate prblm(error unsolved)
 
      Payment folder:
-          *Paymentdetail.js---->code completed,navigate prblm(error unsolve)
+          *Paymentdetail.js---->code completed,navigate prblm(error unsolved)
 
 
 
