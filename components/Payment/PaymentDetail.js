@@ -4,20 +4,23 @@ import {Image, Text, View, ImageBackground, Pressable} from 'react-native';
 import {StyleSheet, ScrollView} from 'react-native';
 import PaymentDetailCard from '../../subcomponents/PaymentDetailCard';
 import {useNavigation} from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 
-const PaymentDetail = ({navigation, route}) => {
+const PaymentDetail = () => {
   return (
+    <NavigationContainer>
+
     <View style={styles.Transactions}>
       <View style={styles.Group707}>
         <View style={styles.Group717}>
-          {/* <Pressable onPress={() => navigation.navigate('Payment')}> */}
             <Image
               style={styles.Back}
               source={{
                 uri: 'https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/1zqka2hb0fl-6761%3A3121?alt=media&token=cf8d1414-473c-4015-9812-b4ff37b1d64e',
               }}
+              accessibilityLabel="Description of your image for accessibility"
+
             />
-          {/* </Pressable> */}
           <Text style={styles.History}>PaymentHistory</Text>
         </View>
 
@@ -37,6 +40,8 @@ const PaymentDetail = ({navigation, route}) => {
         </ScrollView>
       </View>
     </View>
+    </NavigationContainer>
+
   );
 };
 export default PaymentDetail;

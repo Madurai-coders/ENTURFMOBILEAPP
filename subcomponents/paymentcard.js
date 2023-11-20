@@ -1,41 +1,28 @@
-import {Image, Text, View, ImageBackground} from 'react-native';
+import {Image, Text, View, ImageBackground,Button} from 'react-native';
 import {StyleSheet} from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
 function PaymentCard(props) {
+ 
   return (
     <>
-      {/* <View style={styles.Bookingbox}>
-        <Text style={styles.Today}>{props.Day}</Text>
-        <View style={styles.Bookingcontentbox}>
-          <View style={styles.booking}>
-            <Image style={styles.Frame7} source={{uri: props.uri}} />
-            <View style={styles.Frame6}>
-              <Text style={styles.HatricSportsArena}>{props.GroundName}</Text>
-              <Text style={styles._6HoursAgo}>{props.Hours}</Text>
-            </View>
-          </View>
-          <View style={styles.Frame9}>
-          <Text style={styles._1400}>{props.Amount}</Text>
-          <Text style={props.styles}>{props.UpdateAmountStatus}</Text>
-
-
-        </View>
-        </View>
-      </View> */}
+     
+    
       <View style={styles.Bookingbox}>
-      <Text style={styles.Today}>{props.Day}</Text>
-
-        <View
-          style={styles.booking}>
+        <Text style={styles.Today}>{props.Day}</Text>
+        <View style={styles.booking}>
           <View style={{width: '21%'}}>
-            <Image style={styles.Frame7} source={{uri: props.uri}} />
+            <Image
+              style={styles.Frame7}
+              source={{uri: props.uri}}
+              accessibilityLabel="Description of your image for accessibility"
+            />
           </View>
           <View
             style={{
               width: '62%',
               flexDirection: 'column',
-              marginTop:18,
-             
-             
+              marginTop: 18,
             }}>
             <Text style={styles.HatricSportsArena}>{props.GroundName}</Text>
             <Text style={styles._6HoursAgo}>{props.Hours}</Text>
@@ -46,7 +33,6 @@ function PaymentCard(props) {
               flexDirection: 'column',
               justifyContent: 'center',
               alignItems: 'flex-start',
-              
             }}>
             <Text style={styles._1400}>{props.Amount}</Text>
             <Text style={props.styles}>{props.UpdateAmountStatus}</Text>
@@ -62,8 +48,8 @@ export default PaymentCard;
 const styles = StyleSheet.create({
   Bookingbox: {
     width: '100%',
-paddingRight:15,
-paddingLeft:5,
+    paddingRight: 15,
+    paddingLeft: 5,
   },
   Today: {
     color: 'rgba(58,58,58,1)',
@@ -72,14 +58,13 @@ paddingLeft:5,
     fontFamily: 'Nunito, sans-serif',
     fontWeight: 700,
     letterSpacing: 0.4,
-    marginLeft:5,
+    marginLeft: 5,
   },
 
- 
   booking: {
     width: '100%',
     height: 80,
-    marginTop:10,
+    marginTop: 10,
     flexDirection: 'row',
     borderRadius: 6.73,
     boxSizing: 'border-box',
@@ -106,7 +91,6 @@ paddingLeft:5,
     letterSpacing: 0.4,
   },
   _6HoursAgo: {
-  
     color: 'rgba(58,58,58,1)',
     fontSize: 14,
     lineHeight: 20,

@@ -1,168 +1,138 @@
-import BookingPayment from '../Booking-Payment/BookingPayment';
-import BookingDetail from '../Booking/BookingDetail';
-import PaymentDetail from '../Payment/PaymentDetail';
-import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
-import {NavigationContainer} from '@react-navigation/native';
-import Homepage from '../Home/Homepage';
+
+import React from 'react';
+import {View, Text, TouchableOpacity} from 'react-native';
+import {
+  NavigationContainer,
+  useNavigation,
+  useIsFocused,
+} from '@react-navigation/native';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import Entypo from 'react-native-vector-icons/Entypo';
-import Tournament from '../../assets/Navbar/home.png';
-import {Image, View} from 'react-native';
+import BookingPayment from '../Booking-Payment/BookingPayment';
+import BookingDetail from '../Booking/BookingDetail';
+import PaymentDetail from '../Payment/PaymentDetail';
+import Homepage from '../Home/Homepage';
 import TournamentPage from '../Tournament/Tournament';
-import Notification from '../Tournament/Notification';
-const Tab = createMaterialBottomTabNavigator();
+import Notification from '../Notification/Notification';
+import Gallery from '../Gallery/gallery';
+const Tab = createBottomTabNavigator();
 
-const Navbar = () => {
+const CustomTabBarButton = ({label, iconType, iconName, onPress}) => {
+  const isFocused = useIsFocused();
+  const navigation = useNavigation();
+
   return (
-    <NavigationContainer independent={true}>
-      <Tab.Navigator
-        initialRouteName="Tournament"
-        barStyle={{backgroundColor: '#FFFFFF', height: 57}}>
-        <Tab.Screen
-          name="Tournament"
-          component={TournamentPage}
-          options={{
-            tabBarLabel: ({focused, color, size}) => (
-              <Text style={{color: focused ? 'red' : 'black', size: 20}}>
-                Updates
-              </Text>
-            ),
-            tabBarIcon: ({focused, color}) => (
-              <View
-                style={{
-                  backgroundColor: '#F0FFF1',
-                  borderRadius: 25,
-                  width: 50,
-                  height: 50,
-                  marginTop: -12,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}>
-                <SimpleLineIcons
-                  name="trophy"
-                  size={28}
-                  style={{color: focused ? '#5FD068' : ''}}
-                />
-              </View>
-            ),
-          }}
-        />
-        <Tab.Screen
-          name="BookingDetail"
-          component={PaymentDetail}
-          options={{
-            tabBarLabel: ({focused, color, size}) => (
-              <Text style={{color: focused ? 'red' : 'black'}}>Updates</Text>
-            ),
-            tabBarIcon: ({color, focused}) => (
-              <View
-                style={{
-                  backgroundColor: '#F0FFF1',
-                  borderRadius: 25,
-                  width: 50,
-                  height: 50,
-                  marginTop: -12,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}>
-                <FontAwesome
-                  name="picture-o"
-                  size={28}
-                  style={{color: focused ? 'green' : '#5FD068'}}
-                />
-              </View>
-            ),
-          }}
-        />
-        <Tab.Screen
-          name="Homepage"
-          component={Homepage}
-          options={{
-            tabBarLabel: '',
-            tabBarIcon: ({color, focused}) => (
-              <View
-                style={{
-                  backgroundColor: '#F0FFF1',
-                  borderRadius: 25,
-                  width: 50,
-                  height: 50,
-                  marginTop: -12,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}>
-                <MaterialCommunityIcons
-                  name="home-variant-outline"
-                  size={28}
-                  style={{color: focused ? 'green' : '#5FD068'}}
-                />
-              </View>
-            ),
-          }}
-        />
-        <Tab.Screen
-          name="Bookingpayment"
-          component={BookingPayment}
-          options={{
-            tabBarLabel: '',
-            tabBarIcon: ({color, focused}) => (
-              <View
-                style={{
-                  backgroundColor: '#F0FFF1',
-                  borderRadius: 25,
-                  width: 50,
-                  height: 50,
-                  marginTop: -12,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}>
-                <Entypo
-                  name="back-in-time"
-                  size={28}
-                  style={{color: focused ? 'green' : '#5FD068'}}
-                />
-              </View>
-            ),
-          }}
-        />
-        <Tab.Screen
-          name="Notification"
-          component={Notification}
-          screenOptions={{
-            tabBarShowLabel: false,
-          }}
-
-
-
-          options={{
-            tabBarLabel:"no",
-
-            tabBarIcon: ({color, focused}) => (
-              <View
-                style={{
-
-                  backgroundColor: '#F0FFF1',
-                  borderRadius: 25,
-                  width: 50,
-                  height: 50,
-                  marginTop: -12,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}>
-                <Fontisto
-                  name="bell"
-                  size={28}
-                  style={{color: focused ? 'green' : '#5FD068'}}
-                />
-              </View>
-            ),
-          }}
-        />
-      </Tab.Navigator>
-    </NavigationContainer>
+      <TouchableOpacity
+        onPress={() => {
+          onPress();
+          navigation.navigate(label);
+        }}
+        style={{
+          flex: 1,
+          justifyContent: 'center',
+          alignItems: 'center',
+          backgroundColor: isFocused ? '#5FD068' : 'white',
+          flexDirection: 'row',
+          borderRadius: 20,
+          position:"relative",
+          left:10,
+       
+        }}>
+        {iconType === 'simple-line-icons' ? (
+          <SimpleLineIcons
+            name={iconName}
+            size={24}
+            color={isFocused ? 'white' : 'black'}
+          />
+        ) : iconType === 'entypo' ? (
+          <Entypo
+            name={iconName}
+            size={24}
+            color={isFocused ? 'white' : 'black'}
+          />
+        ) : iconType === 'material-community' ? (
+          <MaterialCommunityIcons
+            name={iconName}
+            size={24}
+            color={isFocused ? 'white' : 'black'}
+          />
+        ) : iconType === 'fontisto' ? (
+          <Fontisto
+            name={iconName}
+            size={24}
+            color={isFocused ? 'white' : 'black'}
+          />
+        ) : (
+          <>
+            <Text>{iconName}</Text>
+          </>
+        )}
+        {isFocused && (
+          <View>
+            <Text style={{marginLeft: 5, color: 'white',}}>{label}</Text>
+          </View>
+        )}
+      </TouchableOpacity>
   );
 };
+
+const Navbar = () => (
+  <NavigationContainer independent={true}>
+    <Tab.Navigator
+      tabBarOptions={{
+        style: {
+          backgroundColor: 'white', // Background color of the tab bar
+          elevation: 0, // Remove shadow on Android
+          borderTopwidth: 0,
+
+        },  
+      }}
+      screenOptions={({route}) => ({
+        headerShown: false,
+        tabBarButton: props => (
+          <CustomTabBarButton
+            label={route.name}
+            iconType={route.params?.iconType || 'Homepage'}
+            iconName={route.params?.iconName || 'home-variant-outline'}
+            {...props}
+          />
+        ),
+      })}>
+      <Tab.Screen
+   
+        name="Tournment"
+        component={TournamentPage}
+        initialParams={{iconType: 'simple-line-icons', iconName: 'trophy'}}
+      />
+      <Tab.Screen
+        name="Gallery"
+        component={Gallery}
+        initialParams={{iconType: 'entypo', iconName: 'folder-video'}}
+      />
+      <Tab.Screen
+        name="Home"
+        component={Homepage}
+        initialParams={{
+          iconType: 'material-community',
+          iconName: 'home-variant-outline',
+        }}
+      />
+      <Tab.Screen
+        name="History"
+        component={BookingPayment}
+        initialParams={{iconType: 'entypo', iconName: 'back-in-time'}}
+      />
+      <Tab.Screen
+        name="Notification"
+        component={Notification}
+        initialParams={{iconType: 'fontisto', iconName: 'bell'}}
+      />
+    </Tab.Navigator>
+  </NavigationContainer>
+);
 
 export default Navbar;

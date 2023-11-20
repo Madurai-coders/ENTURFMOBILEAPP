@@ -14,7 +14,11 @@ function BookingDetailCard(props) {
         <View style={styles.booking}>
           <View style={styles.history}>
             <View style={{width: '21%'}}>
-              <Image style={styles.Frame7} source={{uri: props.uri}} />
+              <Image
+                style={styles.Frame7}
+                source={{uri: props.uri}}
+                accessibilityLabel="Description of your image for accessibility"
+              />
             </View>
             <View
               style={{

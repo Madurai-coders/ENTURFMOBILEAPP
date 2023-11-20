@@ -6,7 +6,11 @@ function NotificationCard(props) {
       <Text style={styles.tdy}>Today</Text>
       <View style={styles.notfnbox}>
         <View style={{width: '14%', justifyContent: 'center', marginLeft: 5}}>
-          <Image style={styles.notfnimg} source={props.source} />
+          <Image
+            style={styles.notfnimg}
+            source={props.source}
+            accessibilityLabel="Description of your image for accessibility"
+          />
         </View>
         <View style={{width: '70%', flexDirection: 'column', marginTop: 17}}>
           <View style={{width: '70%', flexDirection: 'row'}}>
@@ -17,7 +21,7 @@ function NotificationCard(props) {
             <Text style={styles.notfndate}>Date: {props.bookingdate}</Text>
           </View>
         </View>
-        <View 
+        <View
           style={{
             width: '13%',
             justifyContent: 'center',

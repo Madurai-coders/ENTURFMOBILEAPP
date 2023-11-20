@@ -1,0 +1,65 @@
+Folders: assets,components,subcomponents
+
+Assets------> General,Homepage,Navbar
+  * Aseets folder contains images 
+
+   General folder:
+     * notfn.png img used in Notification.js
+     *tournment.png img used in Tournment.js
+     
+
+   Homepage folder:
+     *BottomReact.png,gr.png,ground.png & TopReact.png used in Homepage.js
+
+
+components----->Booking,Booking-Payment,Gallery,Home,Navbar,Noification,Payment,Tournment
+
+Navbar--------->nav.js----> navigation focused Style pending (alter background)
+
+  *bottomnavbar contains 5 navigations Tournment,Gallery,Home,History,Notification
+  
+  *Tournment navigate to Tournment.js
+  *Gallery navigate to Gallery.js
+  *Home navigate to Homepage.js
+  *History navigate to Booking-Payment.js
+  *Notification navigate to Notification.js
+
+
+  Tournment folder:
+   * Tournment.js
+
+  Gallery folder:
+   * gallery.js--->nothing coded(no design)
+
+  Home folder:
+   * Homepage.js--->when search input box clicked ....keyboard shown other 
+   section postion changed(error unsolve)
+
+  History folder:
+   * BookingPayment.js-------->Switchable type Booking nd Payment code 
+
+   Noification folder:
+   *Notification .js
+
+
+   Booking folder:
+     *Bookingdetail.js---->code completed,navigate prblm(error unsolve)
+
+     Payment folder:
+          *Paymentdetail.js---->code completed,navigate prblm(error unsolve)
+
+
+
+subcomponents folder:
+         * card props code
+
+         
+
+
+
+
+
+  
+
+
+

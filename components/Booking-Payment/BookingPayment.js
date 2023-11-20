@@ -10,12 +10,10 @@ import {NavigationContainer} from '@react-navigation/native';
 function HomeScreen() {
   return (
     <View style={styles.Group707}>
-      {/* <View style={styles.TabBar}>
-      <View style={styles.Options}> */}
+      
       <Booking />
     </View>
-    // </View>
-    // </View>
+   
   );
 }
 function Setting() {
@@ -32,8 +30,7 @@ const BookingPayment = ({navigation, route}) => {
 
   return (
     <>
-      {/* <View style={{height: 100, backgroundColor: 'rgba(255,255,255,1)'}}> */}
-      {/* <BookingPaymentTitle /> */}
+      
       <NavigationContainer independent={true}>
         <Tab.Navigator
           screenOptions={{
@@ -53,42 +50,7 @@ const BookingPayment = ({navigation, route}) => {
           <Tab.Screen name="Payment" component={Setting}></Tab.Screen>
         </Tab.Navigator>
       </NavigationContainer>
-      {/* </View> */}
-      {/* <View style={{flexDirection: 'row'}}>
-        <Button
-          style={{
-            marginLeft: 20,
-            marginRight: 50,
-            justifyContent: 'flex-start',
-            alignItems: 'flex-start',
-          }}
-          onPress={() => swiperRef.current?.scrollBy(-1)}>
-          prev
-        </Button>
-        <Button
-          style={{marginLeft: 170, marginRight: 20}}
-          onPress={() => swiperRef.current?.scrollBy(1)}>
-          next
-        </Button>
-      </View> */}
-      {/* <Swiper
-        vertical
-        ref={swiperRef}
-        slidesPerView={2}
-        onBeforeInit={swiper => {
-          swiperRef.current = swiper;
-        }}
-        loop={false}
-        style={styles.wrapper}
-        dot={<View style={{display: 'none'}} />}
-        activeDot={<View style={{display: 'none'}} />}>
-        <View style={styles.slide1}>
-          <Booking />
-        </View>
-        <View style={styles.slide2}>
-          <Payment />
-        </View>
-      </Swiper> */}
+    
     </>
   );
 };

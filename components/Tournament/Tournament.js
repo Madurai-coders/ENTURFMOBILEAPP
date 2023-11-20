@@ -33,7 +33,8 @@ const Tournament = () => {
           height: '85%',
           width: '100%',
         }}>
-        <Image source={require('../../assets/General/tournament.png')}></Image>
+        <Image source={require('../../assets/General/tournament.png')}
+         accessibilityLabel="Description of your image for accessibility"></Image>
         <Text style={styles.trnmtTxt}>Coming soon, Stay tune</Text>
       </View>
     </View>

@@ -5,7 +5,7 @@ import {StyleSheet, ScrollView} from 'react-native';
 import BookingDetailCard from '../../subcomponents/BookingDetailCard';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
-const BookingDetail = ({navigation, route}) => {
+const BookingDetail = () => {
   return (
     <View style={styles.Transactions}>
       <View style={styles.Group707}>

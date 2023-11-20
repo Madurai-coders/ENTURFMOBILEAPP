@@ -1,14 +1,21 @@
-import {Image, Text, View, ImageBackground, ScrollView} from 'react-native';
+import {
+  Image,
+  Text,
+  View,
+  ImageBackground,
+  ScrollView,
+  TouchableOpacity,
+} from 'react-native';
 import {StyleSheet} from 'react-native';
 import PaymentCard from '../../subcomponents/paymentcard';
-import { Button} from 'native-base';
+import {Button} from 'native-base';
+import {useNavigation} from '@react-navigation/native';
 
-const Booking = ({navigation}) => {
- 
-
+const Booking = () => {
+  
   return (
     <View style={styles.Transactions}>
-     
+      
       <ScrollView>
         <PaymentCard
           Day="Today"
@@ -112,7 +119,6 @@ const styles = StyleSheet.create({
     top: 55,
   },
   Completed: {
-   
     color: 'rgba(95,208,104,1)',
     fontSize: 11,
     lineHeight: 20,
@@ -120,7 +126,6 @@ const styles = StyleSheet.create({
     fontWeight: 400,
     textAlign: 'right',
     letterSpacing: 0.3,
-
   },
   Failed: {
     display: 'flex',
@@ -133,7 +138,6 @@ const styles = StyleSheet.create({
     fontWeight: 400,
     textAlign: 'right',
     letterSpacing: 0.3,
-
   },
   Refunded: {
     display: 'flex',
@@ -146,6 +150,5 @@ const styles = StyleSheet.create({
     fontWeight: 400,
     textAlign: 'right',
     letterSpacing: 0.3,
-
   },
 });

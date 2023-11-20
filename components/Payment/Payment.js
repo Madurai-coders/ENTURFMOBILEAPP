@@ -12,12 +12,8 @@ const Payment = ({navigation}) => {
 
   return (
     <View style={styles.Transactions}>
-     <Button
-      title="Go to Jane's profile"
-      onPress={() =>
-        navigation.navigate('Detail')
-      }
-    />
+     
+  
 
       <ScrollView>
         <PaymentCard

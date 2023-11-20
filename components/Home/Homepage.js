@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import {Button} from 'native-base';
 import {
   Image,
@@ -9,7 +9,13 @@ import {
   Pressable,
   TextInput,
 } from 'react-native';
-import {StyleSheet, ScrollView, SafeAreaView} from 'react-native';
+import {
+  StyleSheet,
+  ScrollView,
+  SafeAreaView,
+  KeyboardAvoidingView,
+  Platform,
+} from 'react-native';
 import HomepageCard from '../../subcomponents/HomepageCard';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -17,7 +23,11 @@ import Entypo from 'react-native-vector-icons/Entypo';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Feather from 'react-native-vector-icons/Feather';
+import React, {useState} from 'react';
+
 const Homepage = () => {
+  const [searchText, setSearchText] = useState('');
+
   return (
     <View style={{height: '100%', backgroundColor: 'white'}}>
       <View style={styles.topbox}>
@@ -62,15 +72,32 @@ const Homepage = () => {
 
       <View style={styles.middlebox}>
         <View style={styles.middlecontent}>
-          <View style={styles.searchSection}>
+          {/* <View style={styles.searchSection}>
             <TextInput
               style={styles.input}
               placeholder="Search"
-              
               placeholderTextColor={'#999999'}
             />
             <Feather name="search" size={19} style={styles.searchIcon} />
-          </View>
+          </View> */}
+          <KeyboardAvoidingView
+            behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+            style={styles.container}>
+            <View style={styles.searchContainer}>
+              <Ionicons
+                name="search"
+                size={20}
+                color="gray"
+                style={styles.searchIcon}
+              />
+              <TextInput
+                style={styles.input}
+                placeholder="Search"
+                value={searchText}
+                onChangeText={text => setSearchText(text)}
+              />
+            </View>
+          </KeyboardAvoidingView>
         </View>
         <View style={styles.middlecontent1}>
           <Ionicons name="filter" size={30} style={styles.RightIcon}></Ionicons>
@@ -156,13 +183,30 @@ const Homepage = () => {
         </View>
       </ScrollView>
     </View>
-
-   
   );
 };
 export default Homepage;
 
 const styles = StyleSheet.create({
+  container: {
+    padding: 10,
+  },
+  searchContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#F5F5F5',
+    borderRadius: 8,
+    paddingVertical: 8,
+    paddingHorizontal: 12,
+  },
+  searchIcon: {
+    marginRight: 8,
+  },
+  input: {
+    flex: 1,
+    fontSize: 16,
+  },
+
   topbox: {
     width: '100%',
     height: '20%',
@@ -246,19 +290,19 @@ const styles = StyleSheet.create({
   searchSection: {
     // flex: 1,
     flexDirection: 'row',
-    position:"absolute",
-    top:0,
-    bottom:0,
-    left:0,
-    right:0,
-    alignSelf:"center",            
-    borderRadius:10,
-    backgroundColor:'#fff',   
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
+    alignSelf: 'center',
+    borderRadius: 10,
+    backgroundColor: '#fff',
   },
   searchIcon: {
     padding: 0,
     color: '#999999',
-    marginTop: 15,
+    marginTop: 10,
     marginLeft: 17,
     zIndex: 1,
     position: 'absolute',
@@ -276,8 +320,8 @@ const styles = StyleSheet.create({
     position: 'absolute',
     fontfamily: 'Nunito',
     fontweight: 400,
-    height:40,
-    display:"flex"
+    height: 40,
+    display: 'flex',
   },
 
   RightIcon: {
