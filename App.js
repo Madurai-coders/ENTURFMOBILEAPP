@@ -7,7 +7,7 @@ import Homepage from './components/Home/Homepage';
 import BookingPayment from './components/Booking-Payment/BookingPayment';
 import BookingDetail from './components/Booking/BookingDetail';
 import PaymentDetail from './components/Payment/PaymentDetail';
-import Navbar from './components/Navbar/nav';
+import Navbar from './components/Navbar/Navbar';
 import Tournament from './components/Tournament/Tournament';
 import Notification from './components/Notification/Notification';
 import Gallery from './components/Gallery/gallery';
