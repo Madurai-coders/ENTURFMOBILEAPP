@@ -11,7 +11,7 @@ import Fontisto from 'react-native-vector-icons/Fontisto';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import BookingPayment from '../Booking-Payment/BookingPayment';
-import Gallery from '../Gallery/gallery';
+import Gallery from '../Gallery/Gallery';
 import Homepage from '../Home/Homepage';
 import Notification from '../Notification/Notification';
 import TournamentPage from '../Tournament/Tournament';
@@ -33,9 +33,12 @@ const CustomTabBarButton = ({label, iconType, iconName, onPress}) => {
         alignItems: 'center',
         backgroundColor: isFocused ? '#5FD068' : 'white',
         flexDirection: 'row',
-        borderRadius: 20,
-        position: 'relative',
-        left: 10,
+        borderRadius: 45, // Adjust the value to make it a circle
+        marginLeft:17,
+        marginRight:17,
+        marginBottom:4,
+        marginTop:4,
+        overflow: 'hidden', // Clip the content to the rounded border
       }}>
       {iconType === 'simple-line-icons' ? (
         <SimpleLineIcons
@@ -66,11 +69,11 @@ const CustomTabBarButton = ({label, iconType, iconName, onPress}) => {
           <Text>{iconName}</Text>
         </>
       )}
-      {isFocused && (
+      {/* {isFocused && (
         <View>
           <Text style={{marginLeft: 5, color: 'white'}}>{label}</Text>
         </View>
-      )}
+      )} */}
     </TouchableOpacity>
   );
 };
@@ -78,13 +81,19 @@ const CustomTabBarButton = ({label, iconType, iconName, onPress}) => {
 const Navbar = () => (
   <NavigationContainer independent={true}>
     <Tab.Navigator
-      tabBarOptions={{
-        style: {
+     screenOptions={{
+      tabBarStyle: [
+        {
+          display: 'flex',
           backgroundColor: 'white', // Background color of the tab bar
           elevation: 0, // Remove shadow on Android
           borderTopwidth: 0,
+         
         },
-      }}
+        null,
+      ],
+    }}
+     
       screenOptions={({route}) => ({
         headerShown: false,
         tabBarButton: props => (

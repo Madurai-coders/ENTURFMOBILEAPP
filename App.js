@@ -10,8 +10,7 @@ import PaymentDetail from './components/Payment/PaymentDetail';
 import Navbar from './components/Navbar/Navbar';
 import Tournament from './components/Tournament/Tournament';
 import Notification from './components/Notification/Notification';
-import Gallery from './components/Gallery/gallery';
-
+import GalleryPage from './components/Gallery/Gallery';
 const Stack = createStackNavigator();
 
 function App() {
@@ -19,12 +18,14 @@ function App() {
     <NativeBaseProvider>
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName="Navbar`"
+          initialRouteName="Navbar"
           screenOptions={{
             headerShown: false,
-            elevation: 0, // Remove shadow on Android
-            shadowOpacity: 0, // Remove shadow on iOS
-            borderTopwidth: 0,
+            cardStyle: {
+              borderBottomWidth: 0,
+              shadowOpacity: 0,
+              elevation: 0,
+            }, // Set background color
           }}>
           <Stack.Screen
             name="Navbar"
@@ -33,10 +34,13 @@ function App() {
                 elevation: 0,
                 shadowOpacity: 0,
                 borderTopWidth: 0,
+                borderBottomWidth: 0,
               },
             }}
             component={Navbar}></Stack.Screen>
-          <Stack.Screen name="Gallery" component={Gallery}></Stack.Screen>
+          <Stack.Screen
+            name="GalleryPage"
+            component={GalleryPage}></Stack.Screen>
           <Stack.Screen
             name="BookingPayment"
             component={BookingPayment}></Stack.Screen>

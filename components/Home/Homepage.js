@@ -226,14 +226,14 @@ const styles = StyleSheet.create({
     fontSize: 21,
     lineHeight: 50,
     fontFamily: 'Nunito, sans-serif',
-    fontWeight: 600,
+    fontWeight: '600',
   },
   _2972WestheimerRdSan: {
     color: 'rgba(0,0,0,1)',
     fontSize: 11,
     lineHeight: 15,
     fontFamily: 'Nunito, sans-serif',
-    fontWeight: 400,
+    fontWeight: '400',
     letterSpacing: 0.4,
     textTransform: 'capitalize',
     marginTop: -5,
@@ -269,7 +269,7 @@ const styles = StyleSheet.create({
     fontSize: 10,
     lineHeight: 12,
     fontFamily: 'Nunito, sans-serif',
-    fontWeight: 500,
+    fontWeight: '500',
     letterSpacing: 0.45,
     textTransform: 'capitalize',
     marginTop: 5,
@@ -318,8 +318,8 @@ const styles = StyleSheet.create({
     borderWidth: 0.99,
     borderColor: 'rgba(235,235,235,1)',
     position: 'absolute',
-    fontfamily: 'Nunito',
-    fontweight: 400,
+    fontFamily: 'Nunito',
+    fontWeight: '400',
     height: 40,
     display: 'flex',
   },
@@ -339,7 +339,7 @@ const styles = StyleSheet.create({
     fontSize: 13,
     lineHeight: 15,
     fontFamily: 'Nunito, sans-serif',
-    fontWeight: 600,
+    fontWeight: '600',
     letterSpacing: 0.6,
     textTransform: 'capitalize',
   },
@@ -371,7 +371,7 @@ const styles = StyleSheet.create({
     fontSize: 11,
     lineHeight: 16,
     fontFamily: 'Nunito, sans-serif',
-    fontWeight: 700,
+    fontWeight: '700',
     letterSpacing: 0.5,
     textTransform: 'capitalize',
   },
@@ -390,13 +390,13 @@ const styles = StyleSheet.create({
     borderRadius: 22,
     boxSizing: 'border-box',
     marginLeft: 15,
+    
   },
   Football: {
     color: 'rgba(55,55,55,1)',
     fontSize: 10,
     lineHeight: 16,
-    fontFamily: 'Nunito, sans-serif',
-    fontWeight: 700,
+    fontWeight: '700',
     letterSpacing: 0.5,
     textTransform: 'capitalize',
   },
@@ -420,8 +420,7 @@ const styles = StyleSheet.create({
     color: 'rgba(55,55,55,1)',
     fontSize: 11,
     lineHeight: 16,
-    fontFamily: 'Nunito, sans-serif',
-    fontWeight: 700,
+    fontWeight: '700',
     letterSpacing: 0.5,
     textTransform: 'capitalize',
   },
@@ -446,8 +445,7 @@ const styles = StyleSheet.create({
     color: 'rgba(55,55,55,1)',
     fontSize: 12,
     lineHeight: 16,
-    fontFamily: 'Nunito, sans-serif',
-    fontWeight: 700,
+    fontWeight: '700',
     letterSpacing: 0.5,
     textTransform: 'capitalize',
   },
@@ -465,7 +463,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: 359.77,
-
     boxSizing: 'border-box',
     backgroundColor: 'rgba(255,255,255,1)',
   },
@@ -539,3 +536,18 @@ const styles = StyleSheet.create({
     paddingBottom: 50,
   },
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
