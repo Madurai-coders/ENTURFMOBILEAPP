@@ -1,16 +1,13 @@
-import {Image, Text, View, ImageBackground,Button} from 'react-native';
+import {Image, Text, View, ImageBackground, Button} from 'react-native';
 import {StyleSheet} from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 
 function PaymentCard(props) {
- 
   return (
     <>
-     
-    
       <View style={styles.Bookingbox}>
         <Text style={styles.Today}>{props.Day}</Text>
-        <View style={styles.booking}>
+        <View style={styles.Booking}>
           <View style={{width: '21%'}}>
             <Image
               style={styles.Frame7}
@@ -54,26 +51,27 @@ const styles = StyleSheet.create({
   Today: {
     color: 'rgba(58,58,58,1)',
     fontSize: 17,
-    lineHeight: 70,
+    lineHeight:37,
     fontFamily: 'Nunito, sans-serif',
     fontWeight: 700,
     letterSpacing: 0.4,
-    marginLeft: 5,
+    
   },
 
-  booking: {
+  Booking: {
     width: '100%',
     height: 80,
-    marginTop: 10,
     flexDirection: 'row',
     borderRadius: 6.73,
     boxSizing: 'border-box',
-    backgroundColor: '#ffffff',
+    backgroundColor: '#FFFFFF',
     shadowColor: '#171717',
-    shadowOffset: {width: 1, height: 1},
+    shadowOffset: {width: 0, height: 1},
     shadowOpacity: 0.1,
     shadowRadius: 3,
     elevation: 10,
+    position:"relative",
+    top:10,
   },
   Frame7: {
     width: 52,

@@ -8,48 +8,43 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 const HomepageCard = props => {
   return (
     <>
-   
-        <View style={styles.Group153}>
-          <Image style={styles.Image422} source={props.source} />
-          <View style={styles.Group882}>
-            <View style={styles.Frame18789}>
-              <Text style={styles._27Km}>{props.Km}</Text>
-            </View>
-          </View>
-          <View style={styles.Group515}>
-            <Text style={styles.DayNight}>{props.DayNight}</Text>
-            <Text style={styles._8am8pmMonSun}>{props.Time}</Text>
-            <Text style={styles.Avg1000}>
-              <Text style={styles.Avg}>AVG : </Text>
-              {props.BillAmount}
-            </Text>
-          </View>
-          <View style={styles.games}>
-            <FontAwesome name={props.Football} size={17} color={"#57575B"} />
-            <MaterialIcons
-              name={props.Cricket}
-              size={22}
-              color={"#57575B"} 
-              style={{marginLeft: 10,marginTop:-3}}
-            />
-            <MaterialIcons
-              name={props.Tennis}
-              size={22}
-              color={"#57575B"} 
-              style={{marginLeft: 10,marginTop:-3}}
-            />
-          </View>
-          <View style={styles.rect1}>
-            <AntDesign name="heart" size={17} style={styles.hearticon} />
-          </View>
-          <View style={styles.rect2}>
-            <Feather
-              name="arrow-right"
-              size={20}
-              style={styles.leftarrowicon}
-            />
+      <View style={styles.Group153}>
+        <Image style={styles.Image422} source={props.source} />
+        <View style={styles.Group882}>
+          <View style={styles.Frame18789}>
+            <Text style={styles._27Km}>{props.Km}</Text>
           </View>
         </View>
+        <View style={styles.Group515}>
+          <Text style={styles.DayNight}>{props.DayNight}</Text>
+          <Text style={styles._8am8pmMonSun}>{props.Time}</Text>
+          <Text style={styles.Avg1000}>
+            <Text style={styles.Avg}>AVG : </Text>
+            {props.BillAmount}
+          </Text>
+        </View>
+        <View style={styles.games}>
+          <FontAwesome name={props.Football} size={17} color={'#57575B'} />
+          <MaterialIcons
+            name={props.Cricket}
+            size={22}
+            color={'#57575B'}
+            style={{marginLeft: 10, marginTop: -3}}
+          />
+          <MaterialIcons
+            name={props.Tennis}
+            size={22}
+            color={'#57575B'}
+            style={{marginLeft: 10, marginTop: -3}}
+          />
+        </View>
+        <View style={styles.rect1}>
+          <AntDesign name="heart" size={17} style={styles.hearticon} />
+        </View>
+        <View style={styles.rect2}>
+          <Feather name="arrow-right" size={20} style={styles.leftarrowicon} />
+        </View>
+      </View>
     </>
   );
 };
@@ -63,14 +58,16 @@ const styles = StyleSheet.create({
     boxSizing: 'border-box',
     backgroundColor: 'rgba(255,255,255,1)',
     shadowColor: '#171717',
-    shadowOffset: {width: 1, height: 1},
-    shadowOpacity: 0.1,
-    shadowRadius: 3,
-    elevation: 10,
-    marginTop:20,
-    marginLeft:7,
-    marginRight:7,
-    marginBottom:10
+    shadowOffset: {height: 4},
+    shadowOpacity: 0.6,
+    shadowRadius: 7,
+    elevation:4,
+    marginTop: 10,
+    marginLeft: 7,
+    marginRight: 7,
+    marginBottom: 10,
+    borderTopColor: '#FFFFFF',
+    borderTopWidth: 0,
   },
 
   Image422: {
@@ -135,7 +132,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: 15,
     fontFamily: 'Nunito, sans-serif',
-    fontWeight: 600,
+    fontWeight: 700,
   },
   _8am8pmMonSun: {
     color: 'rgba(255,66,66,1)',
@@ -163,7 +160,7 @@ const styles = StyleSheet.create({
   games: {
     position: 'absolute',
     left: '63%',
-    top: '80%',
+    top: '77%',
     display: 'flex',
     flexDirection: 'row',
   },

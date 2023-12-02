@@ -19,8 +19,7 @@ const Tournament = () => {
           style={{
             width: '80%',
             marginTop:3,
-            justifyContent: 'center',
-            alignItems: 'center',
+            
           }}>
           <Text style={styles.notificationtitle}>Tournament</Text>
         </View>
@@ -48,9 +47,10 @@ const styles = StyleSheet.create({
     fontFamily: 'Nunito',
     fontWeight: 600,
     fontSize: 21,
-    lineHeight: 26,
+    lineHeight: 55,
     letterSpacing: 1,
     color: '#222222',
+    alignSelf:"center"
   },
   trnmtTxt: {
     fontFamily: 'Nunito',

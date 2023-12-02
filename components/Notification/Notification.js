@@ -54,9 +54,10 @@ const Notification = () => {
     <View style={{height: '100%', width: '100%'}}>
       <View
         style={{
-          height: '10%',
+          height: '8%',
           width: '100%',
           flexDirection: 'row',
+          display:"flex"
         }}>
         <View style={{marginTop: 18, marginLeft: 15, width: '20%'}}>
           <AntDesign name="left" size={25} color={'#3A3A3A'}></AntDesign>
@@ -64,9 +65,7 @@ const Notification = () => {
         <View
           style={{
             width: '60%',
-            marginTop: 3,
-            justifyContent: 'center',
-            alignItems: 'center',
+       
           }}>
           <Text style={styles.notificationtitle}>Notification</Text>
         </View>
@@ -87,7 +86,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Nunito',
     fontWeight: 600,
     fontSize: 22,
-    lineHeight: 26,
+    lineHeight: 60,
     letterSpacing: 1,
     color: '#222222',
   },

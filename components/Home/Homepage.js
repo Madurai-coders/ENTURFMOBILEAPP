@@ -47,13 +47,8 @@ const Homepage = () => {
               flexDirection: 'row',
             }}>
             <Text style={styles._2972WestheimerRdSan}>
-              2972 Westheimer Rd. Santa Ana Madurai , Tamilnadu
-              <AntDesign
-                name="down"
-                size={16}
-                color={'black'}
-                style={styles.down}
-              />
+              2972 Westheimer Rd.
+              <AntDesign name="down" size={16} />
             </Text>
           </View>
         </View>
@@ -72,14 +67,6 @@ const Homepage = () => {
 
       <View style={styles.middlebox}>
         <View style={styles.middlecontent}>
-          {/* <View style={styles.searchSection}>
-            <TextInput
-              style={styles.input}
-              placeholder="Search"
-              placeholderTextColor={'#999999'}
-            />
-            <Feather name="search" size={19} style={styles.searchIcon} />
-          </View> */}
           <KeyboardAvoidingView
             behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
             style={styles.container}>
@@ -94,12 +81,13 @@ const Homepage = () => {
                 style={styles.input}
                 placeholder="Search"
                 value={searchText}
+                placeholderTextColor={'#999999'}
                 onChangeText={text => setSearchText(text)}
               />
             </View>
           </KeyboardAvoidingView>
         </View>
-        <View style={styles.middlecontent1}>
+        <View>
           <Ionicons name="filter" size={30} style={styles.RightIcon}></Ionicons>
         </View>
       </View>
@@ -188,28 +176,9 @@ const Homepage = () => {
 export default Homepage;
 
 const styles = StyleSheet.create({
-  container: {
-    padding: 10,
-  },
-  searchContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#F5F5F5',
-    borderRadius: 8,
-    paddingVertical: 8,
-    paddingHorizontal: 12,
-  },
-  searchIcon: {
-    marginRight: 8,
-  },
-  input: {
-    flex: 1,
-    fontSize: 16,
-  },
-
   topbox: {
     width: '100%',
-    height: '20%',
+    height: '16%',
     padding: 5,
     flexDirection: 'row',
     flexWrap: 'wrap',
@@ -238,7 +207,9 @@ const styles = StyleSheet.create({
     textTransform: 'capitalize',
     marginTop: -5,
   },
-
+  down: {
+    color: '#646464',
+  },
   topcontent1: {
     width: '20%',
     height: '100%',
@@ -274,58 +245,49 @@ const styles = StyleSheet.create({
     textTransform: 'capitalize',
     marginTop: 5,
   },
-  middlebox: {
-    width: '100%',
-    height: '12%',
-    padding: 5,
+  // search section
+  searchContainer: {
     flexDirection: 'row',
-    flexWrap: 'wrap',
-    backgroundColor: '#F9F9F9',
-  },
-  middlecontent: {
-    height: '20%',
-    width: '84%',
-    marginLeft: 10,
-  },
-  searchSection: {
-    // flex: 1,
-    flexDirection: 'row',
-    position: 'absolute',
-    top: 0,
-    bottom: 0,
-    left: 0,
-    right: 0,
-    alignSelf: 'center',
-    borderRadius: 10,
-    backgroundColor: '#fff',
-  },
-  searchIcon: {
-    padding: 0,
-    color: '#999999',
-    marginTop: 10,
-    marginLeft: 17,
-    zIndex: 1,
-    position: 'absolute',
+    alignItems: 'center',
+    paddingHorizontal: 12,
   },
   input: {
     flex: 1,
+    fontSize: 16,
     paddingLeft: 45,
-    fontSize: 17,
     width: '96%',
     backgroundColor: '#FFFFFF',
     color: 'black',
     borderRadius: 32,
     borderWidth: 0.99,
     borderColor: 'rgba(235,235,235,1)',
-    position: 'absolute',
     fontFamily: 'Nunito',
     fontWeight: '400',
-    height: 40,
+    height: 45,
+  },
+  middlebox: {
     display: 'flex',
+    flexDirection: 'row',
+    boxSizing: 'border-box',
+    width: '100%',
+    backgroundColor: '#F9F9F9',
+    height: '10%',
+  },
+  middlecontent: {
+    width: '84%',
+    marginLeft: 5,
+  },
+  searchIcon: {
+    padding: 0,
+    color: '#999999',
+    marginTop: 10,
+    marginLeft: 23,
+    zIndex: 1,
+    position: 'absolute',
   },
 
   RightIcon: {
-    marginTop: 7,
+    marginTop:6,
     color: '#000000',
   },
   bottombox: {
@@ -390,7 +352,6 @@ const styles = StyleSheet.create({
     borderRadius: 22,
     boxSizing: 'border-box',
     marginLeft: 15,
-    
   },
   Football: {
     color: 'rgba(55,55,55,1)',
@@ -536,18 +497,3 @@ const styles = StyleSheet.create({
     paddingBottom: 50,
   },
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

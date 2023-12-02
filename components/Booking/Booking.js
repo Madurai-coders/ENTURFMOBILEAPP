@@ -12,10 +12,8 @@ import {Button} from 'native-base';
 import {useNavigation} from '@react-navigation/native';
 
 const Booking = () => {
-  
   return (
     <View style={styles.Transactions}>
-      
       <ScrollView>
         <PaymentCard
           Day="Today"
@@ -42,7 +40,7 @@ const Booking = () => {
           UpdateAmountStatus="Refunded"
           styles={styles.Refunded}></PaymentCard>
 
-        <View style={{marginTop: 10}}>
+        <View style={{marginTop: 20}}>
           <PaymentCard
             Day="Yesterday"
             uri="https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/dcpdwi7i9dq-6761%3A3048?alt=media&token=ca0b3877-b908-43c5-a577-222dad59d7c5"
@@ -60,7 +58,7 @@ const Booking = () => {
             UpdateAmountStatus="Completed"
             styles={styles.Completed}></PaymentCard>
         </View>
-        <View style={{marginTop: 10, marginBottom: 100}}>
+        <View style={{marginTop: 20, marginBottom: 70}}>
           <PaymentCard
             Day="Dec 25,2022"
             uri="https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/dcpdwi7i9dq-6761%3A3048?alt=media&token=ca0b3877-b908-43c5-a577-222dad59d7c5"
@@ -83,41 +81,13 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
     width: '100%',
-    height: 707,
     paddingLeft: 10.16,
     paddingRight: 10.16,
     paddingTop: 10.16,
-    paddingBottom: 60.16,
     boxSizing: 'border-box',
     backgroundColor: 'rgba(255,255,255,1)',
   },
 
-  Group38319: {
-    position: 'relative',
-    width: 334,
-    height: 86,
-    boxSizing: 'border-box',
-  },
-  Group38291: {
-    position: 'absolute',
-    width: '100%',
-    height: '100%',
-    boxSizing: 'border-box',
-  },
-  Completed: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'flex-end',
-    color: 'rgba(95,208,104,1)',
-    fontSize: 10,
-    lineHeight: 10,
-    fontFamily: 'Nunito, sans-serif',
-    fontWeight: 500,
-    textAlign: 'right',
-    letterSpacing: 0.3,
-    position: 'absolute',
-    top: 55,
-  },
   Completed: {
     color: 'rgba(95,208,104,1)',
     fontSize: 11,
@@ -138,6 +108,7 @@ const styles = StyleSheet.create({
     fontWeight: 400,
     textAlign: 'right',
     letterSpacing: 0.3,
+    marginLeft:5
   },
   Refunded: {
     display: 'flex',
@@ -150,5 +121,6 @@ const styles = StyleSheet.create({
     fontWeight: 400,
     textAlign: 'right',
     letterSpacing: 0.3,
+   
   },
 });

@@ -41,7 +41,7 @@ const Payment = ({navigation}) => {
           UpdateAmountStatus="Refunded"
           styles={styles.Refunded}></PaymentCard>
 
-        <View style={{marginTop: 10}}>
+        <View style={{marginTop: 20}}>
           <PaymentCard
             Day="Yesterday"
             uri="https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/dcpdwi7i9dq-6761%3A3048?alt=media&token=ca0b3877-b908-43c5-a577-222dad59d7c5"
@@ -59,7 +59,7 @@ const Payment = ({navigation}) => {
             UpdateAmountStatus="Completed"
             styles={styles.Completed}></PaymentCard>
         </View>
-        <View style={{marginTop: 10, marginBottom: 10}}>
+        <View style={{marginTop: 20, marginBottom: 60}}>
           <PaymentCard
             Day="Dec 25,2022"
             uri="https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/dcpdwi7i9dq-6761%3A3048?alt=media&token=ca0b3877-b908-43c5-a577-222dad59d7c5"
@@ -85,7 +85,6 @@ const styles = StyleSheet.create({
     paddingLeft: 10.16,
     paddingRight: 10.16,
     paddingTop: 10.16,
-    paddingBottom: 60.16,
     boxSizing: 'border-box',
     backgroundColor: 'rgba(255,255,255,1)',
   },
@@ -124,11 +123,13 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     color: 'rgba(255,112,112,1)',
     fontSize: 11,
-    lineHeight: 10,
+    lineHeight: 15,
     fontFamily: 'Nunito, sans-serif',
     fontWeight: 400,
     textAlign: 'right',
     letterSpacing: 0.3,
+    marginLeft:5
+
   },
   Refunded: {
     display: 'flex',
@@ -136,7 +137,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     color: 'rgba(255,210,52,1)',
     fontSize: 11,
-    lineHeight: 10,
+    lineHeight: 15,
     fontFamily: 'Nunito, sans-serif',
     fontWeight: 400,
     textAlign: 'right',

@@ -10,6 +10,7 @@ import Entypo from 'react-native-vector-icons/Entypo';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
+import Foundation from 'react-native-vector-icons/Foundation';
 import BookingPayment from '../Booking-Payment/BookingPayment';
 import Gallery from '../Gallery/Gallery';
 import Homepage from '../Home/Homepage';
@@ -31,49 +32,50 @@ const CustomTabBarButton = ({label, iconType, iconName, onPress}) => {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: isFocused ? '#5FD068' : 'white',
+        color: isFocused ? 'black' : "#5FD068",
         flexDirection: 'row',
-        borderRadius: 45, // Adjust the value to make it a circle
         marginLeft:17,
         marginRight:17,
         marginBottom:4,
         marginTop:4,
-        overflow: 'hidden', // Clip the content to the rounded border
       }}>
       {iconType === 'simple-line-icons' ? (
         <SimpleLineIcons
           name={iconName}
-          size={24}
-          color={isFocused ? 'white' : 'black'}
+          size={22}
+          color={isFocused ? '#5FD068' : 'black'}
+          
         />
-      ) : iconType === 'entypo' ? (
-        <Entypo
+      ) : iconType === 'foundation' ? (
+        <Foundation
           name={iconName}
-          size={24}
-          color={isFocused ? 'white' : 'black'}
+          size={32}
+          color={isFocused ? '#5FD068' : 'black'}
         />
+       ) : iconType === 'entypo' ? (
+          <Entypo
+            name={iconName}
+            size={24}
+            color={isFocused ? '#5FD068' : 'black'}
+          />
       ) : iconType === 'material-community' ? (
         <MaterialCommunityIcons
           name={iconName}
-          size={24}
-          color={isFocused ? 'white' : 'black'}
+          size={27}
+          color={isFocused ? '#5FD068' : 'black'}
         />
       ) : iconType === 'fontisto' ? (
         <Fontisto
           name={iconName}
           size={24}
-          color={isFocused ? 'white' : 'black'}
+          color={isFocused ? '#5FD068' : 'black'}
         />
       ) : (
         <>
           <Text>{iconName}</Text>
         </>
       )}
-      {/* {isFocused && (
-        <View>
-          <Text style={{marginLeft: 5, color: 'white'}}>{label}</Text>
-        </View>
-      )} */}
+    
     </TouchableOpacity>
   );
 };
@@ -108,7 +110,7 @@ const Navbar = () => (
       <Tab.Screen
         name="Gallery"
         component={Gallery}
-        initialParams={{iconType: 'entypo', iconName: 'folder-video'}}
+        initialParams={{iconType: 'foundation', iconName: 'play-video'}}
       />
       <Tab.Screen
         name="Tournment"
