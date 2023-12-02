@@ -176,7 +176,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Nunito',
     fontWeight: 600,
     fontSize: 22,
-    lineHeight: 26,
+    lineHeight: 60,
     letterSpacing: 1,
     color: '#222222',
   },

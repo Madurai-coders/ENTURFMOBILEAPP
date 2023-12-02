@@ -119,7 +119,17 @@ const Homepage = ({onPress, initialText}) => {
             style={{
               width: '60%',
               flexDirection: 'row',
-            }}></View>
+            }}>
+            <Text style={styles._2972WestheimerRdSan}>
+              2972 Westheimer Rd. Santa Ana Madurai , Tamilnadu
+              <AntDesign
+                name="down"
+                size={16}
+                color={'black'}
+                style={styles.down}
+              />
+            </Text>
+          </View>
         </View>
         <View style={styles.topcontent1}>
           <View style={styles.profilebox}>
@@ -136,31 +146,34 @@ const Homepage = ({onPress, initialText}) => {
 
       <View style={styles.middlebox}>
         <View style={styles.middlecontent}>
-          <View style={{flex: 1}}>
-            <KeyboardAvoidingView
-              behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-              style={styles.keyboardAvoidingView}>
-              <View style={styles.searchContainer}>
-                <Ionicons
-                  name="search"
-                  size={20}
-                  color="gray"
-                  style={styles.searchIcon}
-                />
-             
-             
-                <TextInput
-                  style={styles.input}
-                  placeholder="Search"
-                  value={searchText}
-                  placeholderTextColor={'#999999'}
-                  onChangeText={text => setSearchText(text)}
-                />
-              </View>
-            </KeyboardAvoidingView>
-          </View>
+          {/* <View style={styles.searchSection}>
+            <TextInput
+              style={styles.input}
+              placeholder="Search"
+              placeholderTextColor={'#999999'}
+            />
+            <Feather name="search" size={19} style={styles.searchIcon} />
+          </View> */}
+          <KeyboardAvoidingView
+            behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+            style={styles.container}>
+            <View style={styles.searchContainer}>
+              <Ionicons
+                name="search"
+                size={20}
+                color="gray"
+                style={styles.searchIcon}
+              />
+              <TextInput
+                style={styles.input}
+                placeholder="Search"
+                value={searchText}
+                onChangeText={text => setSearchText(text)}
+              />
+            </View>
+          </KeyboardAvoidingView>
         </View>
-        <View>
+        <View style={styles.middlecontent1}>
           <Ionicons name="filter" size={30} style={styles.RightIcon}></Ionicons>
         </View>
       </View>
@@ -299,21 +312,25 @@ const Homepage = ({onPress, initialText}) => {
 export default Homepage;
 
 const styles = StyleSheet.create({
-  // button
-
   container: {
-    flex: 1,
-    alignItems: 'center',
+    padding: 10,
+  },
+  searchContainer: {
     flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#F5F5F5',
+    borderRadius: 8,
+    paddingVertical: 8,
+    paddingHorizontal: 12,
   },
-  button: {
-    padding: 7,
-    borderRadius: 22,
-    borderWidth: 1,
-    borderColor: '#5FD068',
-    paddingHorizontal: 15,
-    paddingVertical: 4,
+  searchIcon: {
+    marginRight: 8,
   },
+  input: {
+    flex: 1,
+    fontSize: 16,
+  },
+
   topbox: {
     width: '100%',
     height: '16%',
@@ -348,6 +365,7 @@ const styles = StyleSheet.create({
   down: {
     color: '#646464',
   },
+
   topcontent1: {
     width: '20%',
     height: '100%',
@@ -425,7 +443,7 @@ const styles = StyleSheet.create({
   },
 
   RightIcon: {
-    marginTop: 6,
+    marginTop: 7,
     color: '#000000',
   },
   bottombox: {
@@ -623,33 +641,19 @@ const styles = StyleSheet.create({
     backgroundColor: 'lightgrey',
     paddingBottom: 50,
   },
-  searchContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: 12,
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    zIndex: 1, // Set zIndex higher than other components
-  },
-
-  input: {
-    flex: 1,
-    fontSize: 16,
-    paddingLeft: 45,
-    width: '96%',
-    backgroundColor: '#FFFFFF',
-    color: 'black',
-    borderRadius: 32,
-    borderWidth: 0.99,
-    borderColor: 'rgba(235,235,235,1)',
-    fontFamily: 'Nunito',
-    fontWeight: '400',
-    height: 45,
-  },
-
-  keyboardAvoidingView: {
-    flex: 1,
-  },
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
