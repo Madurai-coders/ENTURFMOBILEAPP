@@ -82,8 +82,8 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
     width: '100%',
-    paddingLeft: 10.16,
-    paddingRight: 10.16,
+    paddingLeft: 5,
+    paddingRight: 5,
     paddingTop: 10.16,
     boxSizing: 'border-box',
     backgroundColor: 'rgba(255,255,255,1)',
@@ -116,6 +116,7 @@ const styles = StyleSheet.create({
     fontWeight: 400,
     textAlign: 'right',
     letterSpacing: 0.3,
+    marginRight:16,
   },
   Failed: {
     display: 'flex',
@@ -142,5 +143,6 @@ const styles = StyleSheet.create({
     fontWeight: 400,
     textAlign: 'right',
     letterSpacing: 0.3,
+    marginRight:10
   },
 });

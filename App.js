@@ -11,6 +11,7 @@ import Navbar from './components/Navbar/Navbar';
 import Tournament from './components/Tournament/Tournament';
 import Notification from './components/Notification/Notification';
 import GalleryPage from './components/Gallery/Gallery';
+import TopNav from './subcomponents/TopNav';
 const Stack = createStackNavigator();
 
 function App() {

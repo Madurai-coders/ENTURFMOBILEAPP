@@ -42,7 +42,7 @@ const BookingPayment = ({navigation, route}) => {
               textTransform: 'capitalize',
               width:"100%"
             },
-            tabBarItemStyle: {marginTop: 20, marginBottom: 13},
+            tabBarItemStyle: {marginTop: 5, marginBottom: 13},
             tabBarStyle: {backgroundColor: 'white'},
             tabBarIndicatorStyle: {backgroundColor: '#5FD068',width:"50%"},
           }}>

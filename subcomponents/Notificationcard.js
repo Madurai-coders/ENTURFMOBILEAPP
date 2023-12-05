@@ -2,7 +2,7 @@ import {View, Text, StyleSheet, Image} from 'react-native';
 
 function NotificationCard(props) {
   return (
-    <View style={{width: '100%', height: '90%', padding: 12, marginTop: 15}}>
+    <View style={{width: '100%', height: '100%', padding: 12, marginTop: 10,backgroundColor:"#FFFFFF"}}>
       <Text style={styles.tdy}>Today</Text>
       <View style={styles.notfnbox}>
         <View style={{width: '14%', justifyContent: 'center', marginLeft: 5}}>
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     borderRadius: 6.73,
     boxSizing: 'border-box',
-    backgroundColor: '#ffffff',
+    backgroundColor: '#FFFFFF',
     shadowColor: '#171717',
     shadowOffset: {width: 1, height: 1},
     shadowOpacity: 0.1,

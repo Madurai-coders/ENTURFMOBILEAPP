@@ -1,9 +1,9 @@
-
 import {View, Text, StyleSheet} from 'react-native';
 import {Button} from 'native-base';
 import {useEffect, useState} from 'react';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import NotificationCard from '../../subcomponents/Notificationcard';
+import TopNav from '../../subcomponents/TopNav';
 function calculateTimeElapsed(notificationSendTime) {
   const currentTime = new Date();
   const timeDifference = currentTime - notificationSendTime;
@@ -50,26 +50,9 @@ const Notification = () => {
   }, []);
 
   return (
-    
-    <View style={{height: '100%', width: '100%'}}>
-      <View
-        style={{
-          height: '8%',
-          width: '100%',
-          flexDirection: 'row',
-          display:"flex"
-        }}>
-        <View style={{marginTop: 18, marginLeft: 15, width: '20%'}}>
-          <AntDesign name="left" size={25} color={'#3A3A3A'}></AntDesign>
-        </View>
-        <View
-          style={{
-            width: '60%',
-       
-          }}>
-          <Text style={styles.notificationtitle}>Notification</Text>
-        </View>
-      </View>
+    <View style={{height: '100%', width: '100%',backgroundColor:"#FFFFFF"}}>
+      <TopNav Title="Notification"></TopNav>
+
       <NotificationCard
         source={require('../../assets/General/notfn.png')}
         groundname="Hatric Sports Arena."
@@ -81,13 +64,4 @@ const Notification = () => {
 };
 
 export default Notification;
-const styles = StyleSheet.create({
-  notificationtitle: {
-    fontFamily: 'Nunito',
-    fontWeight: 600,
-    fontSize: 22,
-    lineHeight: 60,
-    letterSpacing: 1,
-    color: '#222222',
-  },
-});
+

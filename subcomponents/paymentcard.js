@@ -26,16 +26,17 @@ function PaymentCard(props) {
           </View>
           <View
             style={{
-              width: '20.4%',
+              width: '20.8%',
               flexDirection: 'column',
               justifyContent: 'center',
-              alignItems: 'flex-start',
+              alignItems: 'center',
             }}>
             <Text style={styles._1400}>{props.Amount}</Text>
             <Text style={props.styles}>{props.UpdateAmountStatus}</Text>
           </View>
         </View>
       </View>
+    
     </>
   );
 }
@@ -44,9 +45,9 @@ export default PaymentCard;
 
 const styles = StyleSheet.create({
   Bookingbox: {
-    width: '100%',
-    paddingRight: 15,
-    paddingLeft: 5,
+    width: '98%',
+    paddingLeft:1,
+    paddingRight:1,
   },
   Today: {
     color: 'rgba(58,58,58,1)',
@@ -104,5 +105,6 @@ const styles = StyleSheet.create({
     fontWeight: 700,
     textAlign: 'left',
     letterSpacing: 0.4,
+    marginRight:14
   },
 });

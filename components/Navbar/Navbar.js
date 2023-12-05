@@ -1,24 +1,117 @@
+// import React from 'react';
+// import {TouchableOpacity, Image} from 'react-native';
+// import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+// import {
+//   NavigationContainer,
+//   useIsFocused,
+//   useNavigation,
+// } from '@react-navigation/native';
+// import Svg, {G} from 'react-native-svg';
+// import Gallery from '../Gallery/Gallery';
+// import TournamentPage from '../Tournament/Tournament';
+// import GallerySvg from '../../assets/Navbar/Gallery.svg';
+
+// const Tab = createBottomTabNavigator();
+
+// const CustomTabBarButton = ({label, onPress, color}) => {
+//   const isFocused = useIsFocused();
+//   const navigation = useNavigation();
+
+//   const getImageSource = routeName => {
+//     switch (routeName) {
+//       case 'Gallery':
+//         return (
+//           <Svg width="22" height="22" viewBox="0 0 24 24">
+//          <GallerySvg/>
+
+//             <G fill={isFocused ? color.focused : color.unfocused}>
+
+//             </G>
+//           </Svg>
+//         );
+//       case 'Tournament':
+//         return (
+//           <Svg width="22" height="22" viewBox="0 0 24 24">
+//          <GallerySvg/>
+//             <G fill={isFocused ? color.focused : color.unfocused}>
+//             </G>
+//           </Svg>
+//         );
+
+//       default:
+//         return null;
+//     }
+//   };
+
+//   return (
+//     <TouchableOpacity
+//       onPress={() => {
+//         onPress();
+//         navigation.navigate(label);
+//       }}
+//       style={{
+//         flex: 1,
+//         justifyContent: 'center',
+//         alignItems: 'center',
+//         flexDirection: 'row',
+//         marginLeft: 17,
+//         marginRight: 17,
+//         marginBottom: 4,
+//         marginTop: 4,
+//       }}>
+//       {getImageSource(label)}
+//     </TouchableOpacity>
+//   );
+// };
+
+// const Navbar = () => (
+//   <NavigationContainer independent={true}>
+//     <Tab.Navigator
+//       screenOptions={{
+//         tabBarStyle: [
+//           {
+//             display: 'flex',
+//             backgroundColor: 'white',
+//             elevation: 0,
+//             borderTopWidth: 0,
+//           },
+//           null,
+//         ],
+//       }}
+//       screenOptions={({route}) => ({
+//         headerShown: false,
+//         tabBarButton: props => (
+//           <CustomTabBarButton
+//             label={route.name}
+//             onPress={props.onPress}
+//             color={{focused: '#5FD068', unfocused: 'black'}}
+//           />
+//         ),
+//       })}>
+//       <Tab.Screen name="Gallery" component={Gallery} />
+//       <Tab.Screen name="Tournament" component={TournamentPage} />
+//     </Tab.Navigator>
+//   </NavigationContainer>
+// );
+
+// export default Navbar;
+
+import React from 'react';
+import {TouchableOpacity, Image, View} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {
   NavigationContainer,
   useIsFocused,
   useNavigation,
 } from '@react-navigation/native';
-import React from 'react';
-import {Text, TouchableOpacity, View} from 'react-native';
-import Entypo from 'react-native-vector-icons/Entypo';
-import Fontisto from 'react-native-vector-icons/Fontisto';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
-import Foundation from 'react-native-vector-icons/Foundation';
-import BookingPayment from '../Booking-Payment/BookingPayment';
-import Gallery from '../Gallery/Gallery';
-import Homepage from '../Home/Homepage';
-import Notification from '../Notification/Notification';
+import HomePage from '../Home/Homepage';
+import HistoryPage from '../Booking-Payment/BookingPayment';
+import NotificationPage from '../Notification/Notification';
+import GalleryPage from '../Gallery/Gallery';
 import TournamentPage from '../Tournament/Tournament';
 const Tab = createBottomTabNavigator();
 
-const CustomTabBarButton = ({label, iconType, iconName, onPress}) => {
+const CustomTabBarButton = ({label, imageSource, onPress, iconWidth }) => {
   const isFocused = useIsFocused();
   const navigation = useNavigation();
 
@@ -32,50 +125,79 @@ const CustomTabBarButton = ({label, iconType, iconName, onPress}) => {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        color: isFocused ? 'black' : "#5FD068",
         flexDirection: 'row',
-        marginLeft:17,
-        marginRight:17,
-        marginBottom:4,
-        marginTop:4,
+        marginBottom: 4,
+        marginTop: 4,
       }}>
-      {iconType === 'simple-line-icons' ? (
-        <SimpleLineIcons
-          name={iconName}
-          size={22}
-          color={isFocused ? '#5FD068' : 'black'}
-          
+      {/* <Image
+        source={imageSource}
+        style={{
+          width: 30,
+          height:30,
+          tintColor: isFocused ? '#5FD068' : 'black',
+        }}
+        resizeMode="contain"
+      /> */}
+       {label === 'Gallery' && (
+        <Image
+          source={imageSource}
+          style={{
+            width: 32,
+            height: 30,
+            tintColor: isFocused ? '#5FD068' : 'black',
+            marginRight: 8, // Add margin to the right for the first icon
+          }}
+          resizeMode="contain"
         />
-      ) : iconType === 'foundation' ? (
-        <Foundation
-          name={iconName}
-          size={32}
-          color={isFocused ? '#5FD068' : 'black'}
-        />
-       ) : iconType === 'entypo' ? (
-          <Entypo
-            name={iconName}
-            size={24}
-            color={isFocused ? '#5FD068' : 'black'}
-          />
-      ) : iconType === 'material-community' ? (
-        <MaterialCommunityIcons
-          name={iconName}
-          size={27}
-          color={isFocused ? '#5FD068' : 'black'}
-        />
-      ) : iconType === 'fontisto' ? (
-        <Fontisto
-          name={iconName}
-          size={24}
-          color={isFocused ? '#5FD068' : 'black'}
-        />
-      ) : (
-        <>
-          <Text>{iconName}</Text>
-        </>
       )}
-    
+       {label === 'Tournament' && (
+        <Image
+          source={imageSource}
+          style={{
+            width: 31,
+            height: 40,
+            tintColor: isFocused ? '#5FD068' : 'black',
+            marginRight: 8, // Add margin to the right for the first icon
+          }}
+          resizeMode="contain"
+        />
+      )}
+       {label === 'Home' && (
+        <Image
+          source={imageSource}
+          style={{
+            width: 27,
+            height: 27,
+            tintColor: isFocused ? '#5FD068' : 'black',
+            marginRight: 8, // Add margin to the right for the first icon
+          }}
+          resizeMode="contain"
+        />
+      )} 
+       {label === 'History' && (
+        <Image
+          source={imageSource}
+          style={{
+            width: 27,
+            height: 27,
+            tintColor: isFocused ? '#5FD068' : 'black',
+            marginRight: 8, // Add margin to the right for the first icon
+          }}
+          resizeMode="contain"
+        />
+      )} 
+       {label === 'Notification' && (
+        <Image
+          source={imageSource}
+          style={{
+            width: 30,
+            height: 29,
+            tintColor: isFocused ? '#5FD068' : 'black',
+            marginRight: 8, // Add margin to the right for the first icon
+          }}
+          resizeMode="contain"
+        />
+      )} 
     </TouchableOpacity>
   );
 };
@@ -83,61 +205,50 @@ const CustomTabBarButton = ({label, iconType, iconName, onPress}) => {
 const Navbar = () => (
   <NavigationContainer independent={true}>
     <Tab.Navigator
-     screenOptions={{
-      tabBarStyle: [
-        {
-          display: 'flex',
-          backgroundColor: 'white', // Background color of the tab bar
-          elevation: 0, // Remove shadow on Android
-          borderTopwidth: 0,
-         
-        },
-        null,
-      ],
-    }}
-     
+      screenOptions={{
+        tabBarStyle: [
+          {
+            display: 'flex',
+            backgroundColor: 'white', // Background color of the tab bar
+            elevation: 0, // Remove shadow on Android
+            borderTopWidth: 0,
+          },
+          null,
+        ],
+      }}
       screenOptions={({route}) => ({
         headerShown: false,
         tabBarButton: props => (
           <CustomTabBarButton
             label={route.name}
-            iconType={route.params?.iconType || 'Homepage'}
-            iconName={route.params?.iconName || 'home-variant-outline'}
+            imageSource={getImageSource(route.name)}
             {...props}
           />
         ),
       })}>
-      <Tab.Screen
-        name="Gallery"
-        component={Gallery}
-        initialParams={{iconType: 'foundation', iconName: 'play-video'}}
-      />
-      <Tab.Screen
-        name="Tournment"
-        component={TournamentPage}
-        initialParams={{iconType: 'simple-line-icons', iconName: 'trophy'}}
-      />
-
-      <Tab.Screen
-        name="Home"
-        component={Homepage}
-        initialParams={{
-          iconType: 'material-community',
-          iconName: 'home-variant-outline',
-        }}
-      />
-      <Tab.Screen
-        name="History"
-        component={BookingPayment}
-        initialParams={{iconType: 'entypo', iconName: 'back-in-time'}}
-      />
-      <Tab.Screen
-        name="Notification"
-        component={Notification}
-        initialParams={{iconType: 'fontisto', iconName: 'bell'}}
-      />
+      <Tab.Screen name="Gallery" component={GalleryPage} />
+      <Tab.Screen name="Tournament" component={TournamentPage} />
+      <Tab.Screen name="Home" component={HomePage} />
+      <Tab.Screen name="History" component={HistoryPage} />
+      <Tab.Screen name="Notification" component={NotificationPage} />
     </Tab.Navigator>
   </NavigationContainer>
 );
+const getImageSource = routeName => {
+  switch (routeName) {
+    case 'Gallery':
+      return require('../../assets/Navbar/Gallery.png');
+    case 'Tournament':
+      return require('../../assets/Navbar/Tournament.png');
+    case 'Home':
+      return require('../../assets/Navbar/Homepage.png');
+    case 'History':
+      return require('../../assets/Navbar/History.png');
+    case 'Notification':
+      return require('../../assets/Navbar/Notification.png');
 
+    default:
+      return null;
+  }
+};
 export default Navbar;

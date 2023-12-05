@@ -25,16 +25,37 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import Feather from 'react-native-vector-icons/Feather';
 import React, {useState} from 'react';
 
-const Homepage = () => {
+const Homepage = ({onPress}) => {
   const [searchText, setSearchText] = useState('');
 
   return (
     <View style={{height: '100%', backgroundColor: 'white'}}>
       <View style={styles.topbox}>
         <View style={styles.topcontent}>
-          <Text style={styles.WelcomeRichardsFlore}>
+        <Text style={styles.WelcomeRichardsFlore}>
             Welcome Richards Flores
           </Text>
+          <Image
+            style={styles.Group35315}
+            source={{
+              uri: 'https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/mhwg3kb6nm-6383%3A3034?alt=media&token=041e2ca5-fe54-4d4e-98ce-29a15d728879',
+            }}
+          />
+        <View
+            style={{
+              width: '60%',
+              flexDirection: 'row',
+            }}>
+            <Text style={styles._2972WestheimerRdSan}>
+              2972 Westheimer Rd. Santa Ana Madurai , Tamilnadu
+              <AntDesign
+                name="down"
+                size={16}
+                color={'black'}
+                style={styles.down}
+              />
+            </Text>
+          </View>
           <Image
             style={styles.Group35315}
             source={{
@@ -46,10 +67,7 @@ const Homepage = () => {
               width: '60%',
               flexDirection: 'row',
             }}>
-            <Text style={styles._2972WestheimerRdSan}>
-              2972 Westheimer Rd.
-              <AntDesign name="down" size={16} />
-            </Text>
+            
           </View>
         </View>
         <View style={styles.topcontent1}>
@@ -67,10 +85,7 @@ const Homepage = () => {
 
       <View style={styles.middlebox}>
         <View style={styles.middlecontent}>
-          <KeyboardAvoidingView
-            behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-            style={styles.container}>
-            <View style={styles.searchContainer}>
+          {/* <View style={styles.searchContainer}>
               <Ionicons
                 name="search"
                 size={20}
@@ -84,8 +99,28 @@ const Homepage = () => {
                 placeholderTextColor={'#999999'}
                 onChangeText={text => setSearchText(text)}
               />
-            </View>
-          </KeyboardAvoidingView>
+            </View> */}
+          <View style={{flex: 1}}>
+            <KeyboardAvoidingView
+              behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+              style={styles.keyboardAvoidingView}>
+              <View style={styles.searchContainer}>
+                <Ionicons
+                  name="search"
+                  size={20}
+                  color="gray"
+                  style={styles.searchIcon}
+                />
+                <TextInput
+                  style={styles.input}
+                  placeholder="Search"
+                  value={searchText}
+                  placeholderTextColor={'#999999'}
+                  onChangeText={text => setSearchText(text)}
+                />
+              </View>
+            </KeyboardAvoidingView>
+          </View>
         </View>
         <View>
           <Ionicons name="filter" size={30} style={styles.RightIcon}></Ionicons>
@@ -96,19 +131,26 @@ const Homepage = () => {
           <Text style={styles.NearbyYourLocation}>Nearby your location</Text>
         </View>
         <View style={styles.Group38196}>
-          <View style={styles.Frame18790}>
-            <Text style={styles.All}>All</Text>
-          </View>
-
-          <View style={styles.Frame18791}>
-            <Text style={styles.Football}>Football</Text>
-          </View>
-          <View style={styles.Frame18792}>
-            <Text style={styles.Cricket}>Cricket</Text>
-          </View>
-          <View style={styles.Frame18793}>
-            <Text style={styles.Tennis}>Tennis</Text>
-          </View>
+          <TouchableOpacity>
+            <View style={styles.Frame18790}>
+              <Text style={styles.All}>All</Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <View style={styles.Frame18791}>
+              <Text style={styles.Football}>Football</Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <View style={styles.Frame18792}>
+              <Text style={styles.Cricket}>Cricket</Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <View style={styles.Frame18793}>
+              <Text style={styles.Tennis}>Tennis</Text>
+            </View>
+          </TouchableOpacity>
         </View>
       </View>
       <ScrollView style={{flex: 1, backgroundColor: '#F9F9F9'}}>
@@ -287,7 +329,7 @@ const styles = StyleSheet.create({
   },
 
   RightIcon: {
-    marginTop:6,
+    marginTop: 6,
     color: '#000000',
   },
   bottombox: {
@@ -319,18 +361,18 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
-    height: '110%',
-    paddingLeft: 13,
-    paddingRight: 13,
-    paddingTop: 2,
-    paddingBottom: 2,
+    height: '120%',
+    paddingLeft: 17,
+    paddingRight: 17,
+    paddingTop: 4,
+    paddingBottom: 4,
     borderRadius: 22,
     boxSizing: 'border-box',
     backgroundColor: 'rgba(95,208,104,1)',
   },
   All: {
     color: 'rgba(255,255,255,1)',
-    fontSize: 11,
+    fontSize: 12,
     lineHeight: 16,
     fontFamily: 'Nunito, sans-serif',
     fontWeight: '700',
@@ -342,9 +384,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
-    height: '110%',
-    paddingLeft: 13,
-    paddingRight: 13,
+    height: '120%',
+    paddingLeft: 20,
+    paddingRight: 20,
     paddingTop: 2,
     paddingBottom: 2,
     borderWidth: 1,
@@ -355,20 +397,21 @@ const styles = StyleSheet.create({
   },
   Football: {
     color: 'rgba(55,55,55,1)',
-    fontSize: 10,
-    lineHeight: 16,
+    fontSize: 11,
+    lineHeight: 18,
     fontWeight: '700',
     letterSpacing: 0.5,
     textTransform: 'capitalize',
   },
+
   Frame18792: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
-    height: '110%',
-    paddingLeft: 13,
-    paddingRight: 13,
+    height: '120%',
+    paddingLeft: 20,
+    paddingRight: 20,
     paddingTop: 2,
     paddingBottom: 2,
     borderWidth: 1,
@@ -380,7 +423,7 @@ const styles = StyleSheet.create({
   Cricket: {
     color: 'rgba(55,55,55,1)',
     fontSize: 11,
-    lineHeight: 16,
+    lineHeight: 18,
     fontWeight: '700',
     letterSpacing: 0.5,
     textTransform: 'capitalize',
@@ -391,9 +434,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
-    height: '110%',
-    paddingLeft: 13,
-    paddingRight: 13,
+    height: '120%',
+    paddingLeft: 17,
+    paddingRight: 17,
     paddingTop: 2,
     paddingBottom: 2,
     borderWidth: 1,
@@ -405,7 +448,7 @@ const styles = StyleSheet.create({
   Tennis: {
     color: 'rgba(55,55,55,1)',
     fontSize: 12,
-    lineHeight: 16,
+    lineHeight: 18,
     fontWeight: '700',
     letterSpacing: 0.5,
     textTransform: 'capitalize',
@@ -478,22 +521,39 @@ const styles = StyleSheet.create({
     width: 31.97,
     height: '100%',
   },
-
-  scrollView: {
-    height: '20%',
-    width: '80%',
-    margin: 20,
-    alignSelf: 'center',
-    padding: 20,
-    borderWidth: 5,
-    borderRadius: 5,
-    borderColor: 'black',
-    backgroundColor: 'lightblue',
-  },
   contentContainer: {
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'lightgrey',
     paddingBottom: 50,
+  },
+  searchContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 12,
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    zIndex: 1, // Set zIndex higher than other components
+  },
+
+  input: {
+    flex: 1,
+    fontSize: 16,
+    paddingLeft: 45,
+    width: '96%',
+    backgroundColor: '#FFFFFF',
+    color: 'black',
+    borderRadius: 32,
+    borderWidth: 0.99,
+    borderColor: 'rgba(235,235,235,1)',
+    fontFamily: 'Nunito',
+    fontWeight: '400',
+    height: 45,
+  },
+
+  keyboardAvoidingView: {
+    flex: 1,
   },
 });
