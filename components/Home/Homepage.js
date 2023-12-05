@@ -32,7 +32,7 @@ const Homepage = ({onPress}) => {
     <View style={{height: '100%', backgroundColor: 'white'}}>
       <View style={styles.topbox}>
         <View style={styles.topcontent}>
-        <Text style={styles.WelcomeRichardsFlore}>
+          <Text style={styles.WelcomeRichardsFlore}>
             Welcome Richards Flores
           </Text>
           <Image
@@ -41,21 +41,23 @@ const Homepage = ({onPress}) => {
               uri: 'https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/mhwg3kb6nm-6383%3A3034?alt=media&token=041e2ca5-fe54-4d4e-98ce-29a15d728879',
             }}
           />
-        <View
-            style={{
-              width: '60%',
-              flexDirection: 'row',
-            }}>
-            <Text style={styles._2972WestheimerRdSan}>
-              2972 Westheimer Rd. Santa Ana Madurai , Tamilnadu
-              <AntDesign
-                name="down"
-                size={16}
-                color={'black'}
-                style={styles.down}
-              />
-            </Text>
+          <View style={{flexDirection: 'column', width: '76%'}}>
+            <View>
+              <Text style={styles._2972WestheimerRdSan}>
+                2972 Westheimer Rd. Santa Ana Madurai , Tamilnadu
+              </Text>
+            </View>
+            <View style={{alignSelf:'center'}}>
+
+            <AntDesign
+              name="up"
+              size={16}
+              color={'black'}
+              style={{marginTop: -14,marginLeft:18}}
+            />
           </View>
+          </View>
+
           <Image
             style={styles.Group35315}
             source={{
@@ -66,9 +68,7 @@ const Homepage = ({onPress}) => {
             style={{
               width: '60%',
               flexDirection: 'row',
-            }}>
-            
-          </View>
+            }}></View>
         </View>
         <View style={styles.topcontent1}>
           <View style={styles.profilebox}>

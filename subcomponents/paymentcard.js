@@ -46,8 +46,9 @@ export default PaymentCard;
 const styles = StyleSheet.create({
   Bookingbox: {
     width: '98%',
-    paddingLeft:1,
-    paddingRight:1,
+    paddingLeft:2,
+    paddingRight:2,
+    
   },
   Today: {
     color: 'rgba(58,58,58,1)',
