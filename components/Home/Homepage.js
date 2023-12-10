@@ -14,7 +14,6 @@ import {
   ScrollView,
   SafeAreaView,
   KeyboardAvoidingView,
-  Platform,
 } from 'react-native';
 import HomepageCard from '../../subcomponents/HomepageCard';
 import AntDesign from 'react-native-vector-icons/AntDesign';
@@ -23,39 +22,90 @@ import Entypo from 'react-native-vector-icons/Entypo';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Feather from 'react-native-vector-icons/Feather';
-import React, {useState} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 
-const Homepage = ({onPress}) => {
+const Homepage = ({onPress, initialText}) => {
   const [searchText, setSearchText] = useState('');
+  const [clickableBtn, setClickableBtn] = useState(1);
+
+  const ButtonOnClick = btnNumber => {
+    setClickableBtn(btnNumber);
+  };
+
+  const [showMore, setShowMore] = useState(false);
+  const [text, setText] = useState('2972 Westheimer Rd. Santa Ana Madurai , Tamilnadu ');
+
+  const handleToggleShowMore = () => {
+    setShowMore(!showMore);
+  };
 
   return (
     <View style={{height: '100%', backgroundColor: 'white'}}>
       <View style={styles.topbox}>
         <View style={styles.topcontent}>
-          <Text style={styles.WelcomeRichardsFlore}>
-            Welcome Richards Flores
-          </Text>
+          <View style={{height: '36%'}}>
+            <Text style={styles.WelcomeRichardsFlore}>
+              Welcome Richards Flores
+            </Text>
+          </View>
           <Image
             style={styles.Group35315}
             source={{
               uri: 'https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/mhwg3kb6nm-6383%3A3034?alt=media&token=041e2ca5-fe54-4d4e-98ce-29a15d728879',
             }}
           />
-          <View style={{flexDirection: 'column', width: '76%'}}>
+          {/* <View style={{width: address ? '75%' : '47%'}}>
             <View>
               <Text style={styles._2972WestheimerRdSan}>
-                2972 Westheimer Rd. Santa Ana Madurai , Tamilnadu
+                {address
+                  ? '2972 Westheimer Rd. Santa Ana Madurai, Tamilnadu'
+                  : '2972 Westheimer Rd.'}
               </Text>
+             
             </View>
-            <View style={{alignSelf:'center'}}>
 
-            <AntDesign
-              name="up"
-              size={16}
-              color={'black'}
-              style={{marginTop: -14,marginLeft:18}}
-            />
-          </View>
+            <View style={{alignSelf: address ? 'center' : 'flex-end'}}>
+              <AntDesign
+                name={address ? 'up' : 'down'}
+                size={16}
+                color={'black'}
+                style={{
+                  marginTop: address ? -13 : -14,
+                  marginLeft: address ? 15 : 0,
+                }}
+                onPress={() => setAddress(!address)}
+              />
+            </View>
+          </View> */}
+
+          <View style={{width: showMore ? "70%" : "50%", height: '50%',paddingTop:8}}>
+            <Text
+              numberOfLines={showMore ? undefined : 1}
+              style={styles._2972WestheimerRdSan}>
+              {showMore ? text : text.slice(0, 20)}
+
+              {text.length > 15 && (
+                <TouchableOpacity onPress={handleToggleShowMore}>
+                  <View style={{flexDirection: 'row', alignItems: 'center'}}>
+                    <View
+                      style={{
+                        backgroundColor: '#eaeaea',
+                        borderRadius: 15,
+                        padding: 1,
+                        marginRight: 5,
+                        position:"relative",
+                        top:5,
+                      }}>
+                      <AntDesign
+                        name={showMore ? 'up' : 'down'}
+                        size={16}
+                        style={{color: 'black'}}
+                      />
+                    </View>
+                  </View>
+                </TouchableOpacity>
+              )}
+            </Text>
           </View>
 
           <Image
@@ -85,21 +135,6 @@ const Homepage = ({onPress}) => {
 
       <View style={styles.middlebox}>
         <View style={styles.middlecontent}>
-          {/* <View style={styles.searchContainer}>
-              <Ionicons
-                name="search"
-                size={20}
-                color="gray"
-                style={styles.searchIcon}
-              />
-              <TextInput
-                style={styles.input}
-                placeholder="Search"
-                value={searchText}
-                placeholderTextColor={'#999999'}
-                onChangeText={text => setSearchText(text)}
-              />
-            </View> */}
           <View style={{flex: 1}}>
             <KeyboardAvoidingView
               behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
@@ -130,26 +165,69 @@ const Homepage = ({onPress}) => {
         <View>
           <Text style={styles.NearbyYourLocation}>Nearby your location</Text>
         </View>
-        <View style={styles.Group38196}>
-          <TouchableOpacity>
-            <View style={styles.Frame18790}>
-              <Text style={styles.All}>All</Text>
-            </View>
+
+        <View style={styles.container}>
+          <TouchableOpacity
+            style={[
+              styles.button,
+              {backgroundColor: clickableBtn === 1 ? '#5FD068' : 'white'},
+              {color: clickableBtn === 1 ? 'white' : 'black'},
+            ]}
+            onPress={() => ButtonOnClick(1)}>
+            <Text
+              style={{
+                color: clickableBtn === 1 ? 'white' : 'black',
+                fontSize: 13,
+              }}>
+              All
+            </Text>
           </TouchableOpacity>
-          <TouchableOpacity>
-            <View style={styles.Frame18791}>
-              <Text style={styles.Football}>Football</Text>
-            </View>
+
+          <TouchableOpacity
+            style={[
+              styles.button,
+              {backgroundColor: clickableBtn === 2 ? '#5FD068' : 'white'},
+              {color: clickableBtn === 2 ? 'white' : 'black', marginLeft: 10},
+            ]}
+            onPress={() => ButtonOnClick(2)}>
+            <Text
+              style={{
+                color: clickableBtn === 2 ? 'white' : 'black',
+                fontSize: 13,
+              }}>
+              Football
+            </Text>
           </TouchableOpacity>
-          <TouchableOpacity>
-            <View style={styles.Frame18792}>
-              <Text style={styles.Cricket}>Cricket</Text>
-            </View>
+
+          <TouchableOpacity
+            style={[
+              styles.button,
+              {backgroundColor: clickableBtn === 3 ? '#5FD068' : 'white'},
+              {color: clickableBtn === 3 ? 'white' : 'black', marginLeft: 10},
+            ]}
+            onPress={() => ButtonOnClick(3)}>
+            <Text
+              style={{
+                color: clickableBtn === 3 ? 'white' : 'black',
+                fontSize: 13,
+              }}>
+              Cricket
+            </Text>
           </TouchableOpacity>
-          <TouchableOpacity>
-            <View style={styles.Frame18793}>
-              <Text style={styles.Tennis}>Tennis</Text>
-            </View>
+          <TouchableOpacity
+            style={[
+              styles.button,
+              {backgroundColor: clickableBtn === 4 ? '#5FD068' : 'white'},
+              {color: clickableBtn === 4 ? 'white' : 'black', marginLeft: 10},
+            ]}
+            onPress={() => ButtonOnClick(4)}>
+            <Text
+              style={{
+                color: clickableBtn === 4 ? 'white' : 'black',
+                fontSize: 13,
+              }}>
+              Tennis
+            </Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -218,6 +296,21 @@ const Homepage = ({onPress}) => {
 export default Homepage;
 
 const styles = StyleSheet.create({
+  // button
+
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    flexDirection: 'row',
+  },
+  button: {
+    padding: 7,
+    borderRadius: 22,
+    borderWidth: 1,
+    borderColor: '#5FD068',
+    paddingHorizontal: 15,
+    paddingVertical: 4,
+  },
   topbox: {
     width: '100%',
     height: '16%',
@@ -242,12 +335,12 @@ const styles = StyleSheet.create({
   _2972WestheimerRdSan: {
     color: 'rgba(0,0,0,1)',
     fontSize: 11,
-    lineHeight: 15,
+    lineHeight:10,
     fontFamily: 'Nunito, sans-serif',
     fontWeight: '400',
     letterSpacing: 0.4,
     textTransform: 'capitalize',
-    marginTop: -5,
+    paddingTop:0
   },
   down: {
     color: '#646464',

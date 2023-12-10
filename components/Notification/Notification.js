@@ -31,7 +31,7 @@ function calculateTimeElapsed(notificationSendTime) {
     timeElapsed = seconds;
   }
 
-  return `${timeElapsed}${label}`;
+  return `${timeElapsed} ${label}`;
 }
 
 const Notification = () => {

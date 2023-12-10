@@ -1,4 +1,5 @@
 import React from 'react';
+import {useEffect} from 'react';
 import {Text, View} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
@@ -12,9 +13,14 @@ import Tournament from './components/Tournament/Tournament';
 import Notification from './components/Notification/Notification';
 import GalleryPage from './components/Gallery/Gallery';
 import TopNav from './subcomponents/TopNav';
+import SplashScreen from 'react-native-splash-screen'
+
 const Stack = createStackNavigator();
 
 function App() {
+  useEffect(() => {
+    if (Platform.OS === 'android') SplashScreen.hide();
+  }, []);
   return (
     <NativeBaseProvider>
       <NavigationContainer>
