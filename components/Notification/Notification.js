@@ -1,4 +1,4 @@
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, ScrollView} from 'react-native';
 import {Button} from 'native-base';
 import {useEffect, useState} from 'react';
 import AntDesign from 'react-native-vector-icons/AntDesign';
@@ -50,18 +50,33 @@ const Notification = () => {
   }, []);
 
   return (
-    <View style={{height: '100%', width: '100%',backgroundColor:"#FFFFFF"}}>
+    <View style={{height: '100%', backgroundColor: '#F9F9F9'}}>
       <TopNav Title="Notification"></TopNav>
-
-      <NotificationCard
-        source={require('../../assets/General/notfn.png')}
-        groundname="Hatric Sports Arena."
-        bookingdate="27th Sep  Time: 5AM to 9PM"
-        notfntime={timeElapsed}
-      />
+      <ScrollView style={{flex: 1, backgroundColor: '#F9F9F9', marginTop: 10}}>
+        <View style={{flex: 1, justifyContent: 'center'}}>
+          <View style={{marginTop: 10}}>
+            <NotificationCard
+              day="Today"
+              source={require('../../assets/General/notfn.png')}
+              groundname="Hatric Sports Arena."
+              bookingdate="27th Sep  Time: 5AM to 9PM"></NotificationCard>
+          </View>
+          <View style={{marginTop: -30}}>
+            <NotificationCard
+              source={require('../../assets/General/notfn.png')}
+              groundname="Hatric Sports Arena"
+              bookingdate="27th Sep  Time: 5AM to 9PM"></NotificationCard>
+          </View>
+          <View style={{marginTop: -30}}>
+            <NotificationCard
+              source={require('../../assets/General/notfn.png')}
+              groundname="Hatric Sports Arena."
+              bookingdate="27th Sep  Time: 5AM to 9PM"></NotificationCard>
+          </View>
+        </View>
+      </ScrollView>
     </View>
   );
 };
 
 export default Notification;
-
