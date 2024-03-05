@@ -78,7 +78,7 @@ const Homepage = ({onPress, initialText}) => {
             </View>
           </View> */}
 
-          <View style={{width: showMore ? "70%" : "50%", height: '50%',paddingTop:8}}>
+          <View style={{width: showMore ? "70%" : "50%", height: '50%',paddingTop:10}}>
             <Text
               numberOfLines={showMore ? undefined : 1}
               style={styles._2972WestheimerRdSan}>
@@ -146,6 +146,8 @@ const Homepage = ({onPress, initialText}) => {
                   color="gray"
                   style={styles.searchIcon}
                 />
+             
+             
                 <TextInput
                   style={styles.input}
                   placeholder="Search"
@@ -335,7 +337,7 @@ const styles = StyleSheet.create({
   _2972WestheimerRdSan: {
     color: 'rgba(0,0,0,1)',
     fontSize: 11,
-    lineHeight:10,
+    lineHeight:11,
     fontFamily: 'Nunito, sans-serif',
     fontWeight: '400',
     letterSpacing: 0.4,
