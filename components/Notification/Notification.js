@@ -4,6 +4,7 @@ import {useEffect, useState} from 'react';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import NotificationCard from '../../subcomponents/Notificationcard';
 import TopNav from '../../subcomponents/TopNav';
+
 function calculateTimeElapsed(notificationSendTime) {
   const currentTime = new Date();
   const timeDifference = currentTime - notificationSendTime;
@@ -18,7 +19,7 @@ function calculateTimeElapsed(notificationSendTime) {
   let label;
   let timeElapsed;
   if (days > 0) {
-    label = days === 1 ? 'day' : 'days';
+    label = days === 1 ? 'd' : 'd';
     timeElapsed = days;
   } else if (hours > 0) {
     label = hours === 1 ? 'h' : 'h';
@@ -31,52 +32,123 @@ function calculateTimeElapsed(notificationSendTime) {
     timeElapsed = seconds;
   }
 
-  return `${timeElapsed} ${label}`;
+  return `${timeElapsed}${label}`;
 }
 
 const Notification = () => {
-  const [notificationSendTime] = useState(new Date('2023-10-02T10:00:00')); // Replace with the actual send time
-  const [timeElapsed, setTimeElapsed] = useState(
-    calculateTimeElapsed(notificationSendTime),
-  );
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      const updatedTimeElapsed = calculateTimeElapsed(notificationSendTime);
-      setTimeElapsed(updatedTimeElapsed);
-    }, 1000);
-
-    return () => clearInterval(intervalId);
-  }, []);
+  const notificationDataSets = [
+    [
+      {
+        day: 'Today',
+        notificationSendTime: new Date('2024-02-28T15:00:00'),
+        source: require('../../assets/General/notfn.png'),
+        groundname: 'Hatric Sports Arena.',
+        bookingdate: '27th Sep  Time: 5AM to 9PM',
+      },
+      // Add more notifications for set 1
+    ],
+    [
+      {
+        notificationSendTime: new Date('2024-02-28T10:00:00'),
+        source: require('../../assets/General/notfn.png'),
+        groundname: 'Hatric Sports Arena.',
+        bookingdate: '27th Sep  Time: 5AM to 9PM',
+      },
+      // Add more notifications for set 1
+    ],
+    [
+      {
+        notificationSendTime: new Date('2024-02-28T09:00:00'),
+        source: require('../../assets/General/notfn.png'),
+        groundname: 'Hatric Sports Arena.',
+        bookingdate: '27th Sep  Time: 5AM to 9PM',
+      },
+      // Add more notifications for set 1
+    ],
+    [
+      {
+        day: 'Yesterday',
+        notificationSendTime: new Date('2024-02-27T011:00:00'),
+        source: require('../../assets/General/notfn.png'),
+        groundname: 'Hatric Sports Arena.',
+        bookingdate: '27th Sep  Time: 5AM to 9PM',
+      },
+      // Add more notifications for set 2
+    ],
+    [
+      {
+      
+        notificationSendTime: new Date('2024-02-27T10:00:00'),
+        source: require('../../assets/General/notfn.png'),
+        groundname: 'ACME Arena',
+        bookingdate: '27th Sep  Time: 5AM to 9PM',
+      },
+      // Add more notifications for set 2
+    ],
+    // Add more sets of notifications if needed
+  ];
 
   return (
+    // <View style={{height: '100%', backgroundColor: '#F9F9F9'}}>
+    //   <TopNav Title="Notification"></TopNav>
+    //   <ScrollView style={{flex: 1, backgroundColor: '#F9F9F9', marginTop: 10}}>
+    //     <View style={{flex: 1, justifyContent: 'center'}}>
+    //       <View style={{marginTop: 10}}>
+    //         <NotificationCard
+
+    //           source={require('../../assets/General/notfn.png')}
+    //           groundname="Hatric Sports Arena."
+    //           bookingdate="27th Sep  Time: 5AM to 9PM"></NotificationCard>
+    //       </View>
+    //       <View style={{marginTop: -30}}>
+    //         <NotificationCard
+    //           source={require('../../assets/General/notfn.png')}
+    //           groundname="Hatric Sports Arena"
+    //           bookingdate="27th Sep  Time: 5AM to 9PM"></NotificationCard>
+    //       </View>
+    //       <View style={{marginTop: -30}}>
+    //         <NotificationCard
+    //           source={require('../../assets/General/notfn.png')}
+    //           groundname="Hatric Sports Arena."
+    //           bookingdate="27th Sep  Time: 5AM to 9PM"></NotificationCard>
+    //       </View>
+    //     </View>
+    //   </ScrollView>
+    // </View>
+
     <View style={{height: '100%', backgroundColor: '#F9F9F9'}}>
       <TopNav Title="Notification"></TopNav>
-      <ScrollView style={{flex: 1, backgroundColor: '#F9F9F9', marginTop: 10}}>
-        <View style={{flex: 1, justifyContent: 'center'}}>
-          <View style={{marginTop: 10}}>
-            <NotificationCard
-              day="Today"
-              source={require('../../assets/General/notfn.png')}
-              groundname="Hatric Sports Arena."
-              bookingdate="27th Sep  Time: 5AM to 9PM"></NotificationCard>
-          </View>
-          <View style={{marginTop: -30}}>
-            <NotificationCard
-              source={require('../../assets/General/notfn.png')}
-              groundname="Hatric Sports Arena"
-              bookingdate="27th Sep  Time: 5AM to 9PM"></NotificationCard>
-          </View>
-          <View style={{marginTop: -30}}>
-            <NotificationCard
-              source={require('../../assets/General/notfn.png')}
-              groundname="Hatric Sports Arena."
-              bookingdate="27th Sep  Time: 5AM to 9PM"></NotificationCard>
-          </View>
+      {notificationDataSets.map((notificationDataSet, setIndex) => (
+        <View key={setIndex}>
+          {notificationDataSet.map((notification, index) => (
+            <View
+              key={`${setIndex}_${index}`}
+              style={{marginTop: index === 1 ? 0 : -30}}>
+              <NotificationCard
+                day={notification.day}
+                source={notification.source}
+                groundname={notification.groundname}
+                bookingdate={notification.bookingdate}
+                notfntime={calculateTimeElapsed(
+                  notification.notificationSendTime,
+                )}
+              />
+            </View>
+          ))}
         </View>
-      </ScrollView>
+      ))}
     </View>
   );
 };
 
 export default Notification;
+const styles = StyleSheet.create({
+  notificationtitle: {
+    fontFamily: 'Nunito',
+    fontWeight: 600,
+    fontSize: 22,
+    lineHeight: 26,
+    letterSpacing: 1,
+    color: '#222222',
+  },
+});

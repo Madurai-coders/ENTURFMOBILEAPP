@@ -46,6 +46,7 @@ const Homepage = ({onPress, initialText}) => {
           <View style={{height: '36%'}}>
             <Text style={styles.WelcomeRichardsFlore}>
               Welcome Richards Flores
+              
             </Text>
           </View>
           <Image
