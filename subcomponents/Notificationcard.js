@@ -2,6 +2,7 @@ import {View, Text, StyleSheet, Image} from 'react-native';
 
 function NotificationCard(props) {
   return (
+<<<<<<< HEAD
     // <View>
     //   <Text style={styles.tdy}>{props.day}</Text>
 
@@ -65,6 +66,38 @@ function NotificationCard(props) {
             marginTop: 40,
           }}>
           <Text style={styles.notfntime}>{props.notfntime}</Text>
+=======
+    <View>
+      <Text style={styles.tdy}>{props.day}</Text>
+
+      <View>
+        <View style={styles.notfnbox}>
+          {/* <View style={{width: '15%', justifyContent: 'center', marginLeft: 5}}>
+            <Image
+              style={styles.notfnimg}
+              source={props.source}
+              accessibilityLabel="Description of your image for accessibility"
+            />
+          </View> */}
+          {/* <View style={{width: '70%', flexDirection: 'column', marginTop: 17}}>
+            <View style={{width: '70%', flexDirection: 'row'}}>
+              <Text style={styles.notfntxt}>Booking confirmed on </Text>
+              <Text style={styles.notfntxt1}>{props.groundname}</Text>
+            </View>
+            <View>
+              <Text style={styles.notfndate}>Date: {props.bookingdate}</Text>
+            </View>
+          </View> */}
+          {/* <View
+            style={{
+              width: '13%',
+              justifyContent: 'center',
+              alignItems: 'flex-end',
+              marginTop: 40,
+            }}>
+            <Text style={styles.notfntime}>{props.notfntime}</Text>
+          </View> */}
+>>>>>>> a0c06173bb07fda931ec1b746c5ca33ee3e79058
         </View>
       </View>
     </View>
@@ -78,15 +111,24 @@ const styles = StyleSheet.create({
     fontFamily: 'Nunito',
     fontWeight: 700,
     fontSize: 17,
+<<<<<<< HEAD
     lineHeight: 60,
     letterSpacing: 0.420561,
     color: '#3A3A3A',
     position:"relative",
     top:20
+=======
+    lineHeight: 18,
+    letterSpacing: 0.420561,
+    color: '#3A3A3A',
+    marginTop: 10,
+    marginLeft: 10,
+
+>>>>>>> a0c06173bb07fda931ec1b746c5ca33ee3e79058
   },
   notfnbox: {
-    width: '100%',
     height: 73,
+<<<<<<< HEAD
     position:"relative",
     top:10,
     flexDirection: 'row',
@@ -95,14 +137,44 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff',
     shadowColor: '#171717',
     shadowOffset: {width: 1, height: 1},
+=======
+    borderRadius: 6.73,
+    boxSizing: 'border-box',
+    backgroundColor: '#FFFFFF',
+    shadowColor: 'rgba(0, 0, 0, 0.14)',
+    shadowOffset: {height: 1,width:1},
+>>>>>>> a0c06173bb07fda931ec1b746c5ca33ee3e79058
     shadowOpacity: 0.1,
     shadowRadius: 3,
-    elevation: 10,
+    elevation:  10,
+    marginLeft: 7,
+    marginRight: 7,
+    borderTopColor: '#FFFFFF',
+    borderTopWidth: 0,
+    marginTop:15
+    // height: 73,
+    // flexDirection: 'row',
+    // borderRadius: 6.73,
+    // boxSizing: 'border-box',
+    // backgroundColor: '#FFFFFF',
+    // shadowColor: '#171717',
+    // shadowOffset: {width: 1, height: 1},
+    // shadowOpacity: 0.1,
+    // shadowRadius: 3,
+    // elevation: 10,
+    // marginTop: 10,
+    // marginLeft: 7,
+    // marginRight: 7,
+    // marginBottom: 10,
   },
+<<<<<<< HEAD
   notfnimg: {
     width: 50,
     height: 50,
   },
+=======
+
+>>>>>>> a0c06173bb07fda931ec1b746c5ca33ee3e79058
   notfntxt: {
     fontFamily: 'Nunito',
     fontWeight: 400,

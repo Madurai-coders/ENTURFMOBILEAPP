@@ -89,6 +89,7 @@ const Notification = () => {
   ];
 
   return (
+<<<<<<< HEAD
     // <View style={{height: '100%', backgroundColor: '#F9F9F9'}}>
     //   <TopNav Title="Notification"></TopNav>
     //   <ScrollView style={{flex: 1, backgroundColor: '#F9F9F9', marginTop: 10}}>
@@ -137,11 +138,39 @@ const Notification = () => {
           ))}
         </View>
       ))}
+=======
+    <View style={{height: '100%', backgroundColor: '#F9F9F9'}}>
+      <TopNav Title="Notification"></TopNav>
+      <ScrollView style={{flex: 1, backgroundColor: '#F9F9F9', marginTop: 10}}>
+        <View style={{flex: 1, justifyContent: 'center'}}>
+          <View style={{marginTop: 10}}>
+            <NotificationCard
+              day="Today"
+              source={require('../../assets/General/notfn.png')}
+              groundname="Hatric Sports Arena."
+              bookingdate="27th Sep  Time: 5AM to 9PM"></NotificationCard>
+          </View>
+          <View style={{marginTop: -30}}>
+            <NotificationCard
+              source={require('../../assets/General/notfn.png')}
+              groundname="Hatric Sports Arena"
+              bookingdate="27th Sep  Time: 5AM to 9PM"></NotificationCard>
+          </View>
+          <View style={{marginTop: -30}}>
+            <NotificationCard
+              source={require('../../assets/General/notfn.png')}
+              groundname="Hatric Sports Arena."
+              bookingdate="27th Sep  Time: 5AM to 9PM"></NotificationCard>
+          </View>
+        </View>
+      </ScrollView>
+>>>>>>> a0c06173bb07fda931ec1b746c5ca33ee3e79058
     </View>
   );
 };
 
 export default Notification;
+<<<<<<< HEAD
 const styles = StyleSheet.create({
   notificationtitle: {
     fontFamily: 'Nunito',
@@ -152,3 +181,5 @@ const styles = StyleSheet.create({
     color: '#222222',
   },
 });
+=======
+>>>>>>> a0c06173bb07fda931ec1b746c5ca33ee3e79058
