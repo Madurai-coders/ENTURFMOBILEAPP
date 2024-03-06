@@ -1,11 +1,25 @@
 import {ScrollView, VStack} from 'native-base';
-import {Image, Text, View, ImageBackground} from 'react-native';
+import {
+  Image,
+  Text,
+  View,
+  ImageBackground,
+  TouchableOpacity,
+} from 'react-native';
 import {StyleSheet} from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Feather from 'react-native-vector-icons/Feather';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import React, {useState} from 'react';
+import { color } from 'native-base/lib/typescript/theme/styled-system';
+
 const HomepageCard = props => {
+  const [isClicked, setIsClicked] = useState(false);
+
+  const handlePress = () => {
+    setIsClicked(!isClicked);
+  };
   return (
     <>
       <View style={styles.Group153}>
@@ -38,9 +52,18 @@ const HomepageCard = props => {
             style={{marginLeft: 10, marginTop: -3}}
           />
         </View>
-        <View style={styles.rect1}>
+        {/* <View style={styles.rect1}>
           <AntDesign name="heart" size={17} style={styles.hearticon} />
-        </View>
+        </View> */}
+        <TouchableOpacity onPress={handlePress}>
+          <View style={styles.rect1}>
+          <AntDesign
+          name={isClicked ? "heart" : "hearto"}
+          size={17}
+          style={[styles.hearticon, {color: isClicked ? 'red': "#57575B"}]}
+        />
+          </View>
+        </TouchableOpacity>
         <View style={styles.rect2}>
           <Feather name="arrow-right" size={20} style={styles.leftarrowicon} />
         </View>
@@ -60,11 +83,11 @@ const styles = StyleSheet.create({
     shadowColor: '#171717',
     shadowOffset: {height: 4},
     shadowOpacity: 0.6,
-    shadowRadius: 7,
-    elevation:4,
-    marginTop: 10,
-    marginLeft: 7,
-    marginRight: 7,
+    shadowRadius: 5,
+    elevation: 3,
+    marginTop: 5,
+    marginLeft: 8,
+    marginRight: 12,
     marginBottom: 10,
     borderTopColor: '#FFFFFF',
     borderTopWidth: 0,
@@ -103,9 +126,9 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(255,255,255,1)',
     shadowColor: '#000000',
     shadowOffset: {width: 1, height: 1},
-    shadowOpacity: 0.1,
-    shadowRadius: 3,
-    elevation: 22,
+    shadowOpacity: 0.5,
+    shadowRadius: 1,
+    elevation: 1,
   },
   _27Km: {
     position: 'absolute',

@@ -129,15 +129,7 @@ const CustomTabBarButton = ({label, imageSource, onPress, iconWidth }) => {
         marginBottom: 4,
         marginTop: 4,
       }}>
-      {/* <Image
-        source={imageSource}
-        style={{
-          width: 30,
-          height:30,
-          tintColor: isFocused ? '#5FD068' : 'black',
-        }}
-        resizeMode="contain"
-      /> */}
+     
        {label === 'Gallery' && (
         <Image
           source={imageSource}
@@ -145,7 +137,7 @@ const CustomTabBarButton = ({label, imageSource, onPress, iconWidth }) => {
             width: 32,
             height: 30,
             tintColor: isFocused ? '#5FD068' : 'black',
-            marginRight: 8, // Add margin to the right for the first icon
+            marginRight: 8,
           }}
           resizeMode="contain"
         />
@@ -157,7 +149,7 @@ const CustomTabBarButton = ({label, imageSource, onPress, iconWidth }) => {
             width: 31,
             height: 40,
             tintColor: isFocused ? '#5FD068' : 'black',
-            marginRight: 8, // Add margin to the right for the first icon
+            marginRight: 8, 
           }}
           resizeMode="contain"
         />
@@ -169,7 +161,7 @@ const CustomTabBarButton = ({label, imageSource, onPress, iconWidth }) => {
             width: 27,
             height: 27,
             tintColor: isFocused ? '#5FD068' : 'black',
-            marginRight: 8, // Add margin to the right for the first icon
+            marginRight: 8, 
           }}
           resizeMode="contain"
         />
@@ -181,7 +173,7 @@ const CustomTabBarButton = ({label, imageSource, onPress, iconWidth }) => {
             width: 27,
             height: 27,
             tintColor: isFocused ? '#5FD068' : 'black',
-            marginRight: 8, // Add margin to the right for the first icon
+            marginRight: 8, 
           }}
           resizeMode="contain"
         />
@@ -193,7 +185,7 @@ const CustomTabBarButton = ({label, imageSource, onPress, iconWidth }) => {
             width: 30,
             height: 29,
             tintColor: isFocused ? '#5FD068' : 'black',
-            marginRight: 8, // Add margin to the right for the first icon
+            marginRight: 8, 
           }}
           resizeMode="contain"
         />
@@ -227,8 +219,8 @@ const Navbar = () => (
         ),
       })}>
       <Tab.Screen name="Gallery" component={GalleryPage} />
-      <Tab.Screen name="Tournament" component={HomePage} />
-      <Tab.Screen name="Home" component={TournamentPage} />
+      <Tab.Screen name="Tournament" component={TournamentPage} />
+      <Tab.Screen name="Home" component={HomePage} />
       <Tab.Screen name="History" component={HistoryPage} />
       <Tab.Screen name="Notification" component={NotificationPage} />
     </Tab.Navigator>

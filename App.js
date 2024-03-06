@@ -13,7 +13,7 @@ import Tournament from './components/Tournament/Tournament';
 import Notification from './components/Notification/Notification';
 import GalleryPage from './components/Gallery/Gallery';
 import TopNav from './subcomponents/TopNav';
-import SplashScreen from 'react-native-splash-screen'
+import SplashScreen from 'react-native-splash-screen';
 
 const Stack = createStackNavigator();
 
@@ -45,27 +45,16 @@ function App() {
               },
             }}
             component={Navbar}></Stack.Screen>
-          <Stack.Screen
-            name="GalleryPage"
-            component={GalleryPage}></Stack.Screen>
+      
           <Stack.Screen
             name="BookingPayment"
             component={BookingPayment}></Stack.Screen>
-          <Stack.Screen name="Homepage" component={Homepage}></Stack.Screen>
 
           <Stack.Screen
             name="BookingDetail"
             component={BookingDetail}></Stack.Screen>
           <Stack.Screen name="Detail" component={PaymentDetail}></Stack.Screen>
-          <Stack.Screen
-            name="Tournament"
-            options={{
-              headerShown: false, // Set to false to hide the header title
-            }}
-            component={Tournament}></Stack.Screen>
-          <Stack.Screen
-            name="Notification"
-            component={Notification}></Stack.Screen>
+       
         </Stack.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>

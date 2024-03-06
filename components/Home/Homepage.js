@@ -1,4 +1,3 @@
-// import React from 'react';
 import {Button} from 'native-base';
 import {
   Image,
@@ -8,6 +7,7 @@ import {
   TouchableOpacity,
   Pressable,
   TextInput,
+  Platform,
 } from 'react-native';
 import {
   StyleSheet,
@@ -33,7 +33,9 @@ const Homepage = ({onPress, initialText}) => {
   };
 
   const [showMore, setShowMore] = useState(false);
-  const [text, setText] = useState('2972 Westheimer Rd. Santa Ana Madurai , Tamilnadu ');
+  const [text, setText] = useState(
+    '2972 Westheimer Rd. Santa Ana Madurai , Tamilnadu ',
+  );
 
   const handleToggleShowMore = () => {
     setShowMore(!showMore);
@@ -46,7 +48,6 @@ const Homepage = ({onPress, initialText}) => {
           <View style={{height: '36%'}}>
             <Text style={styles.WelcomeRichardsFlore}>
               Welcome Richards Flores
-              
             </Text>
           </View>
           <Image
@@ -79,7 +80,12 @@ const Homepage = ({onPress, initialText}) => {
             </View>
           </View> */}
 
-          <View style={{width: showMore ? "70%" : "50%", height: '50%',paddingTop:10}}>
+          <View
+            style={{
+              width: showMore ? '70%' : '50%',
+              height: '50%',
+              paddingTop: 10,
+            }}>
             <Text
               numberOfLines={showMore ? undefined : 1}
               style={styles._2972WestheimerRdSan}>
@@ -94,8 +100,8 @@ const Homepage = ({onPress, initialText}) => {
                         borderRadius: 15,
                         padding: 1,
                         marginRight: 5,
-                        position:"relative",
-                        top:5,
+                        position: 'relative',
+                        top: 5,
                       }}>
                       <AntDesign
                         name={showMore ? 'up' : 'down'}
@@ -119,17 +125,7 @@ const Homepage = ({onPress, initialText}) => {
             style={{
               width: '60%',
               flexDirection: 'row',
-            }}>
-            <Text style={styles._2972WestheimerRdSan}>
-              2972 Westheimer Rd. Santa Ana Madurai , Tamilnadu
-              <AntDesign
-                name="down"
-                size={16}
-                color={'black'}
-                style={styles.down}
-              />
-            </Text>
-          </View>
+            }}></View>
         </View>
         <View style={styles.topcontent1}>
           <View style={styles.profilebox}>
@@ -144,16 +140,9 @@ const Homepage = ({onPress, initialText}) => {
         </View>
       </View>
 
-      <View style={styles.middlebox}>
+      {/* <View style={styles.middlebox}>
         <View style={styles.middlecontent}>
-          {/* <View style={styles.searchSection}>
-            <TextInput
-              style={styles.input}
-              placeholder="Search"
-              placeholderTextColor={'#999999'}
-            />
-            <Feather name="search" size={19} style={styles.searchIcon} />
-          </View> */}
+        
           <KeyboardAvoidingView
             behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
             style={styles.container}>
@@ -176,11 +165,106 @@ const Homepage = ({onPress, initialText}) => {
         <View style={styles.middlecontent1}>
           <Ionicons name="filter" size={30} style={styles.RightIcon}></Ionicons>
         </View>
+      </View> */}
+      <View style={styles.middlebox}>
+        <View style={styles.middlecontent}>
+          <View style={{flex: 1}}>
+              <KeyboardAvoidingView
+          behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+          style={styles.keyboardcontainer}>
+              <View style={styles.searchContainer}>
+                <Ionicons
+                  name="search"
+                  size={21}
+                  color="gray"
+                  style={styles.searchIcon}
+                />
+
+                <TextInput
+                  style={[styles.input, {fontSize: 17}]}
+                  placeholder="Search"
+                  value={searchText}
+                  placeholderTextColor={'#999999'}
+                  onChangeText={text => setSearchText(text)}
+                />
+              </View>
+            </KeyboardAvoidingView>
+            
+          </View>
+        </View>
+        <View>
+          <Ionicons name="filter" size={30} style={styles.RightIcon}></Ionicons>
+        </View>
       </View>
       <View style={styles.bottombox}>
         <View>
           <Text style={styles.NearbyYourLocation}>Nearby your location</Text>
         </View>
+
+        {/* <View style={styles.container}>
+          <TouchableOpacity
+            style={[
+              styles.button,
+              {backgroundColor: clickableBtn === 1 ? '#5FD068' : 'white'},
+              {color: clickableBtn === 1 ? 'white' : 'black'},
+            ]}
+            onPress={() => ButtonOnClick(1)}>
+            <Text
+              style={{
+                color: clickableBtn === 1 ? 'white' : 'black',
+                fontSize: 13,
+              }}>
+              All
+            </Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={[
+              styles.button,
+              {backgroundColor: clickableBtn === 2 ? '#5FD068' : 'white'},
+              {color: clickableBtn === 2 ? 'white' : 'black', marginLeft: 10},
+            ]}
+            onPress={() => ButtonOnClick(2)}>
+            <Text
+              style={{
+                color: clickableBtn === 2 ? 'white' : 'black',
+                fontSize: 13,
+              }}>
+              Football
+            </Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={[
+              styles.button,
+              {backgroundColor: clickableBtn === 3 ? '#5FD068' : 'white'},
+              {color: clickableBtn === 3 ? 'white' : 'black', marginLeft: 10},
+            ]}
+            onPress={() => ButtonOnClick(3)}>
+            <Text
+              style={{
+                color: clickableBtn === 3 ? 'white' : 'black',
+                fontSize: 13,
+              }}>
+              Cricket
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={[
+              styles.button,
+              {backgroundColor: clickableBtn === 4 ? '#5FD068' : 'white'},
+              {color: clickableBtn === 4 ? 'white' : 'black', marginLeft: 10},
+            ]}
+            onPress={() => ButtonOnClick(4)}>
+            <Text
+              style={{
+                color: clickableBtn === 4 ? 'white' : 'black',
+                fontSize: 13,
+              }}>
+              Tennis
+            </Text>
+          </TouchableOpacity>
+        </View> */}
 
         <View style={styles.container}>
           <TouchableOpacity
@@ -310,27 +394,22 @@ const Homepage = ({onPress, initialText}) => {
   );
 };
 export default Homepage;
-
 const styles = StyleSheet.create({
-  container: {
-    padding: 10,
-  },
-  searchContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#F5F5F5',
-    borderRadius: 8,
-    paddingVertical: 8,
-    paddingHorizontal: 12,
-  },
-  searchIcon: {
-    marginRight: 8,
-  },
-  input: {
-    flex: 1,
-    fontSize: 16,
-  },
+  // button
 
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    flexDirection: 'row',
+  },
+  button: {
+    padding: 7,
+    borderRadius: 22,
+    borderWidth: 1,
+    borderColor: '#5FD068',
+    paddingHorizontal: 15,
+    paddingVertical: 4,
+  },
   topbox: {
     width: '100%',
     height: '16%',
@@ -355,17 +434,16 @@ const styles = StyleSheet.create({
   _2972WestheimerRdSan: {
     color: 'rgba(0,0,0,1)',
     fontSize: 11,
-    lineHeight:11,
+    lineHeight: 11,
     fontFamily: 'Nunito, sans-serif',
     fontWeight: '400',
     letterSpacing: 0.4,
     textTransform: 'capitalize',
-    paddingTop:0
+    paddingTop: 0,
   },
   down: {
     color: '#646464',
   },
-
   topcontent1: {
     width: '20%',
     height: '100%',
@@ -402,6 +480,9 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
   // search section
+ keyboardcontainer: {
+    flex: 1,
+  },
   searchContainer: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -427,7 +508,7 @@ const styles = StyleSheet.create({
     boxSizing: 'border-box',
     width: '100%',
     backgroundColor: '#F9F9F9',
-    height: '10%',
+    height: '9%',
   },
   middlecontent: {
     width: '84%',
@@ -443,21 +524,21 @@ const styles = StyleSheet.create({
   },
 
   RightIcon: {
-    marginTop: 7,
+    marginTop: 6,
     color: '#000000',
   },
   bottombox: {
     width: '100%',
-    height: '11%',
+    height: '10%',
     paddingLeft: 20,
     backgroundColor: '#F9F9F9',
   },
   NearbyYourLocation: {
     color: '#000000',
-    fontSize: 13,
+    fontSize: 14,
     lineHeight: 15,
     fontFamily: 'Nunito, sans-serif',
-    fontWeight: '600',
+    fontWeight: '800',
     letterSpacing: 0.6,
     textTransform: 'capitalize',
   },
@@ -641,19 +722,31 @@ const styles = StyleSheet.create({
     backgroundColor: 'lightgrey',
     paddingBottom: 50,
   },
+  searchContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 12,
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    zIndex: 1, // Set zIndex higher than other components
+  },
+
+  input: {
+    flex: 1,
+    fontSize: 16,
+    paddingLeft: 45,
+    width: '96%',
+    backgroundColor: '#FFFFFF',
+    color: 'black',
+    borderRadius: 32,
+    borderWidth: 0.99,
+    borderColor: 'rgba(235,235,235,1)',
+    fontFamily: 'Nunito',
+    fontWeight: '400',
+    height: 45,
+  },
+
+  
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

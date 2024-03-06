@@ -111,12 +111,11 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     color: 'rgba(95,208,104,1)',
     fontSize: 11,
-    lineHeight: 15,
+    lineHeight: 20,
     fontFamily: 'Nunito, sans-serif',
     fontWeight: 400,
     textAlign: 'right',
     letterSpacing: 0.3,
-    marginRight:16,
   },
   Failed: {
     display: 'flex',
@@ -124,12 +123,11 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     color: 'rgba(255,112,112,1)',
     fontSize: 11,
-    lineHeight: 15,
+    lineHeight: 20,
     fontFamily: 'Nunito, sans-serif',
     fontWeight: 400,
     textAlign: 'right',
     letterSpacing: 0.3,
-    marginLeft:5
 
   },
   Refunded: {
@@ -138,11 +136,10 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     color: 'rgba(255,210,52,1)',
     fontSize: 11,
-    lineHeight: 15,
+    lineHeight: 20,
     fontFamily: 'Nunito, sans-serif',
     fontWeight: 400,
     textAlign: 'right',
     letterSpacing: 0.3,
-    marginRight:10
   },
 });

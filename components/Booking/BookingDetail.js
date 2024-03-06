@@ -1,12 +1,19 @@
 import React from 'react';
 import {Button} from 'native-base';
-import {Image, Text, View, ImageBackground, Pressable} from 'react-native';
+import {Image, Text, View, ImageBackground, TouchableOpacity} from 'react-native';
 import {StyleSheet, ScrollView} from 'react-native';
 import BookingDetailCard from '../../subcomponents/BookingDetailCard';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import { useNavigation } from '@react-navigation/native';
 
-const BookingDetail = () => {
+const BookingDetail = ({navigation}) => {
+
+  const handleReturnPress = () => {
+    navigation.goBack(); // Go back to the previous screen
+  };
   return (
+    <TouchableOpacity onPress={handleReturnPress}>
+
     <View style={styles.Transactions}>
       <View style={styles.Group707}>
         <View
@@ -43,6 +50,8 @@ const BookingDetail = () => {
         </ScrollView>
       </View>
     </View>
+    </TouchableOpacity>
+
   );
 };
 export default BookingDetail;

@@ -9,12 +9,13 @@ import {
 import {StyleSheet} from 'react-native';
 import PaymentCard from '../../subcomponents/paymentcard';
 import {Button} from 'native-base';
-import {useNavigation} from '@react-navigation/native';
 
 const Booking = () => {
+
   return (
     <View style={styles.Transactions}>
       <ScrollView>
+
         <PaymentCard
           Day="Today"
           uri="https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/dcpdwi7i9dq-6761%3A3048?alt=media&token=ca0b3877-b908-43c5-a577-222dad59d7c5"
@@ -91,12 +92,12 @@ const styles = StyleSheet.create({
   Completed: {
     color: 'rgba(95,208,104,1)',
     fontSize: 11,
-    lineHeight: 20,
+    lineHeight: 25,
     fontFamily: 'Nunito, sans-serif',
     fontWeight: 400,
     textAlign: 'right',
     letterSpacing: 0.3,
-   marginRight:21,
+   
   },
   Failed: {
     display: 'flex',
@@ -104,12 +105,11 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     color: 'rgba(255,112,112,1)',
     fontSize: 11,
-    lineHeight: 20,
+    lineHeight: 25,
     fontFamily: 'Nunito, sans-serif',
     fontWeight: 400,
     textAlign: 'right',
     letterSpacing: 0.3,
-    marginLeft:1
   },
   Refunded: {
     display: 'flex',
@@ -117,11 +117,10 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     color: 'rgba(255,210,52,1)',
     fontSize: 11,
-    lineHeight: 20,
+    lineHeight: 25,
     fontFamily: 'Nunito, sans-serif',
     fontWeight: 400,
     textAlign: 'right',
     letterSpacing: 0.3,
-   marginRight:14
   },
 });

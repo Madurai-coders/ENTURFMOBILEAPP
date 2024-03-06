@@ -1,42 +1,64 @@
-import {Image, Text, View, ImageBackground, Button} from 'react-native';
+import {
+  Image,
+  Text,
+  View,
+  ImageBackground,
+  Button,
+  TouchableOpacity,
+  Pressable,
+} from 'react-native';
 import {StyleSheet} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
+import React, {useState} from 'react';
 
 function PaymentCard(props) {
+  const [isPressed, setIsPressed] = useState(false);
+
+  const handlePressIn = () => {
+    setIsPressed(true);
+  };
+
+  const handlePressOut = () => {
+    setIsPressed(false);
+  };
   return (
     <>
       <View style={styles.Bookingbox}>
         <Text style={styles.Today}>{props.Day}</Text>
-        <View style={styles.Booking}>
-          <View style={{width: '21%'}}>
-            <Image
-              style={styles.Frame7}
-              source={{uri: props.uri}}
-              accessibilityLabel="Description of your image for accessibility"
-            />
+        <TouchableOpacity
+          activeOpacity={0.7}
+          onPressIn={handlePressIn}
+          onPressOut={handlePressOut}>
+          <View style={[styles.Booking, isPressed && styles.bookingPressed]}>
+            <View style={{width: '21%'}}>
+              <Image
+                style={styles.Frame7}
+                source={{uri: props.uri}}
+                accessibilityLabel="Description of your image for accessibility"
+              />
+            </View>
+            <View
+              style={{
+                width: '55%',
+                flexDirection: 'column',
+                marginTop: 18,
+              }}>
+              <Text style={styles.HatricSportsArena}>{props.GroundName}</Text>
+              <Text style={styles._6HoursAgo}>{props.Hours}</Text>
+            </View>
+            <View
+              style={{
+                width: '27.5%',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}>
+              <Text style={styles._1400}>{props.Amount}</Text>
+              <Text style={props.styles}>{props.UpdateAmountStatus}</Text>
+            </View>
           </View>
-          <View
-            style={{
-              width: '62%',
-              flexDirection: 'column',
-              marginTop: 18,
-            }}>
-            <Text style={styles.HatricSportsArena}>{props.GroundName}</Text>
-            <Text style={styles._6HoursAgo}>{props.Hours}</Text>
-          </View>
-          <View
-            style={{
-              width: '20.8%',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}>
-            <Text style={styles._1400}>{props.Amount}</Text>
-            <Text style={props.styles}>{props.UpdateAmountStatus}</Text>
-          </View>
-        </View>
+        </TouchableOpacity>
       </View>
-    
     </>
   );
 }
@@ -45,19 +67,16 @@ export default PaymentCard;
 
 const styles = StyleSheet.create({
   Bookingbox: {
-    width: '98%',
-    paddingLeft:2,
-    paddingRight:2,
-    
+    width: '97.5%',
+    paddingLeft: 5,
   },
   Today: {
     color: 'rgba(58,58,58,1)',
     fontSize: 17,
-    lineHeight:37,
+    lineHeight: 37,
     fontFamily: 'Nunito, sans-serif',
     fontWeight: 700,
     letterSpacing: 0.4,
-    
   },
 
   Booking: {
@@ -69,11 +88,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
     shadowColor: '#171717',
     shadowOffset: {width: 0, height: 1},
-    shadowOpacity: 0.1,
-    shadowRadius: 3,
-    elevation: 10,
-    position:"relative",
-    top:10,
+    shadowOpacity: 0.9,
+    shadowRadius: 2,
+    elevation: 5,
+    position: 'relative',
+    top: 15,
+    marginTop:-10
+  },
+  bookingPressed: {
+    backgroundColor: '#F7F7F7',
   },
   Frame7: {
     width: 52,
@@ -93,7 +116,7 @@ const styles = StyleSheet.create({
   _6HoursAgo: {
     color: 'rgba(58,58,58,1)',
     fontSize: 14,
-    lineHeight: 20,
+    lineHeight: 25,
     fontFamily: 'Nunito, sans-serif',
     fontWeight: 400,
     letterSpacing: 0.2,
@@ -106,6 +129,6 @@ const styles = StyleSheet.create({
     fontWeight: 700,
     textAlign: 'left',
     letterSpacing: 0.4,
-    marginRight:14
+marginTop:5,
   },
 });
