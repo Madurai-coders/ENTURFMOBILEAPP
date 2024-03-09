@@ -107,11 +107,11 @@ import {
 import HomePage from '../Home/Homepage';
 import HistoryPage from '../Booking-Payment/BookingPayment';
 import NotificationPage from '../Notification/Notification';
-import GalleryPage from '../Gallery/Gallery';
+import GalleryIndex from '../Gallery/GalleryIndex';
 import TournamentPage from '../Tournament/Tournament';
 const Tab = createBottomTabNavigator();
 
-const CustomTabBarButton = ({label, imageSource, onPress, iconWidth }) => {
+const CustomTabBarButton = ({label, imageSource, onPress, iconWidth}) => {
   const isFocused = useIsFocused();
   const navigation = useNavigation();
 
@@ -142,7 +142,7 @@ const CustomTabBarButton = ({label, imageSource, onPress, iconWidth }) => {
           resizeMode="contain"
         />
       )}
-       {label === 'Tournament' && (
+      {label === 'Tournament' && (
         <Image
           source={imageSource}
           style={{
@@ -154,7 +154,7 @@ const CustomTabBarButton = ({label, imageSource, onPress, iconWidth }) => {
           resizeMode="contain"
         />
       )}
-       {label === 'Home' && (
+      {label === 'Home' && (
         <Image
           source={imageSource}
           style={{
@@ -165,8 +165,8 @@ const CustomTabBarButton = ({label, imageSource, onPress, iconWidth }) => {
           }}
           resizeMode="contain"
         />
-      )} 
-       {label === 'History' && (
+      )}
+      {label === 'History' && (
         <Image
           source={imageSource}
           style={{
@@ -177,8 +177,8 @@ const CustomTabBarButton = ({label, imageSource, onPress, iconWidth }) => {
           }}
           resizeMode="contain"
         />
-      )} 
-       {label === 'Notification' && (
+      )}
+      {label === 'Notification' && (
         <Image
           source={imageSource}
           style={{
@@ -189,7 +189,7 @@ const CustomTabBarButton = ({label, imageSource, onPress, iconWidth }) => {
           }}
           resizeMode="contain"
         />
-      )} 
+      )}
     </TouchableOpacity>
   );
 };
@@ -197,17 +197,17 @@ const CustomTabBarButton = ({label, imageSource, onPress, iconWidth }) => {
 const Navbar = () => (
   <NavigationContainer independent={true}>
     <Tab.Navigator
-      screenOptions={{
-        tabBarStyle: [
-          {
-            display: 'flex',
-            backgroundColor: 'white', // Background color of the tab bar
-            elevation: 0, // Remove shadow on Android
-            borderTopWidth: 0,
-          },
-          null,
-        ],
-      }}
+    //   screenOptions={{
+    //     tabBarStyle: [
+    //       {
+    //         display: 'flex',
+    //         backgroundColor: 'white', // Background color of the tab bar
+    //         elevation: 0, // Remove shadow on Android
+    //         borderTopWidth: 0,
+    //       },
+    //       null,
+    //     ],
+    //   }}
       screenOptions={({route}) => ({
         headerShown: false,
         tabBarButton: props => (
@@ -218,7 +218,7 @@ const Navbar = () => (
           />
         ),
       })}>
-      <Tab.Screen name="Gallery" component={GalleryPage} />
+      <Tab.Screen name="Gallery" component={GalleryIndex} />
       <Tab.Screen name="Tournament" component={TournamentPage} />
       <Tab.Screen name="Home" component={HomePage} />
       <Tab.Screen name="History" component={HistoryPage} />
