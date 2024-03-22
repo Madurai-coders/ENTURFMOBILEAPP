@@ -3,7 +3,7 @@ import {Button} from 'native-base';
 import {useEffect, useState} from 'react';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import NotificationCard from '../../subcomponents/Notificationcard';
-import TopNav from '../../subcomponents/TopNav';
+import Header from '../../subcomponents/Header';
 
 function calculateTimeElapsed(notificationSendTime) {
   const currentTime = new Date();
@@ -117,7 +117,7 @@ const Notification = () => {
     // </View>
 
     <View style={{height: '100%', backgroundColor: '#F9F9F9'}}>
-      <TopNav Title="Notification"></TopNav>
+      <Header Title="Notification"></Header>
       {notificationDataSets.map((notificationDataSet, setIndex) => (
         <View key={setIndex}>
           {notificationDataSet.map((notification, index) => (

@@ -1,10 +1,10 @@
 import {View, Text, StyleSheet, Image} from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
-function TopNav(props) {
+function Header(props) {
   return (
     <View style={styles.notification}>
-      <View style={{marginTop: 22, marginLeft: 15, width: '10%'}}>
+      <View style={{marginTop: 22, marginLeft: 15, width: '8%'}}>
         <AntDesign name="left" size={24} color={'#000000'}></AntDesign>
       </View>
       <View
@@ -18,7 +18,7 @@ function TopNav(props) {
   );
 }
 
-export default TopNav;
+export default Header;
 
 const styles = StyleSheet.create({
   notification: {

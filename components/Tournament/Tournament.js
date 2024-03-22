@@ -1,11 +1,11 @@
 import {View, Text, StyleSheet} from 'react-native';
 import {Button, Image} from 'native-base';
 import {useEffect, useState} from 'react';
-import TopNav from '../../subcomponents/TopNav';
+import Header from '../../subcomponents/Header';
 const Tournament = () => {
   return (
     <View style={{height: '100%', width: '100%', backgroundColor: '#FFFFFF'}}>
-      <TopNav Title="Tournament"></TopNav>
+      <Header Title="Tournament"></Header>
       <View
         style={{
           justifyContent: 'center',

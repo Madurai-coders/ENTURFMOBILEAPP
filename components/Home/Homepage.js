@@ -23,8 +23,9 @@ import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Feather from 'react-native-vector-icons/Feather';
 import React, {useState, useRef, useEffect} from 'react';
+import {DrawerActions} from '@react-navigation/native';
 
-const Homepage = ({onPress, initialText}) => {
+const Homepage = ({onPress, initialText, navigation}) => {
   const [searchText, setSearchText] = useState('');
   const [clickableBtn, setClickableBtn] = useState(1);
 
@@ -40,9 +41,12 @@ const Homepage = ({onPress, initialText}) => {
   const handleToggleShowMore = () => {
     setShowMore(!showMore);
   };
+  const openSideNav = () => {
+    navigation.dispatch(DrawerActions.openDrawer());
+  };
 
   return (
-    <View style={{height: '100%', backgroundColor: 'white'}}>
+    <View style={{height: '100%',backgroundColor:"white"}}>
       <View style={styles.topbox}>
         <View style={styles.topcontent}>
           <View style={{height: '36%'}}>
@@ -98,14 +102,14 @@ const Homepage = ({onPress, initialText}) => {
                       style={{
                         backgroundColor: '#eaeaea',
                         borderRadius: 15,
-                        padding: 1,
+                        padding: 2.5,
                         marginRight: 5,
                         position: 'relative',
-                        top: 5,
+                        top: 4,
                       }}>
                       <AntDesign
                         name={showMore ? 'up' : 'down'}
-                        size={16}
+                        size={11}
                         style={{color: 'black'}}
                       />
                     </View>
@@ -128,15 +132,17 @@ const Homepage = ({onPress, initialText}) => {
             }}></View>
         </View>
         <View style={styles.topcontent1}>
-          <View style={styles.profilebox}>
-            <Image
-              style={styles.Ellipse162}
-              source={{
-                uri: 'https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/mhwg3kb6nm-6383%3A3042?alt=media&token=0ae05abb-17a3-41fb-86b9-4a4fa8856618',
-              }}
-            />
-            <Text style={styles.Profile}>Profile</Text>
-          </View>
+          <TouchableOpacity onPress={openSideNav} activeOpacity={0.7}>
+            <View style={styles.profilebox}>
+              <Image
+                style={styles.Ellipse162}
+                source={{
+                  uri: 'https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/mhwg3kb6nm-6383%3A3042?alt=media&token=0ae05abb-17a3-41fb-86b9-4a4fa8856618',
+                }}
+              />
+              <Text style={styles.Profile}>Profile</Text>
+            </View>
+          </TouchableOpacity>
         </View>
       </View>
 
@@ -166,12 +172,13 @@ const Homepage = ({onPress, initialText}) => {
           <Ionicons name="filter" size={30} style={styles.RightIcon}></Ionicons>
         </View>
       </View> */}
+
       <View style={styles.middlebox}>
         <View style={styles.middlecontent}>
           <View style={{flex: 1}}>
-              <KeyboardAvoidingView
-          behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-          style={styles.keyboardcontainer}>
+            <KeyboardAvoidingView
+              behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+              style={styles.keyboardcontainer}>
               <View style={styles.searchContainer}>
                 <Ionicons
                   name="search"
@@ -189,7 +196,6 @@ const Homepage = ({onPress, initialText}) => {
                 />
               </View>
             </KeyboardAvoidingView>
-            
           </View>
         </View>
         <View>
@@ -416,7 +422,6 @@ const styles = StyleSheet.create({
     padding: 5,
     flexDirection: 'row',
     flexWrap: 'wrap',
-    backgroundColor: '#F9F9F9',
   },
   topcontent: {
     width: '80%',
@@ -428,7 +433,7 @@ const styles = StyleSheet.create({
     color: 'rgba(62,62,62,1)',
     fontSize: 21,
     lineHeight: 50,
-    fontFamily: 'Nunito, sans-serif',
+    fontFamily: 'Advent Pro',
     fontWeight: '600',
   },
   _2972WestheimerRdSan: {
@@ -443,6 +448,7 @@ const styles = StyleSheet.create({
   },
   down: {
     color: '#646464',
+    fontSize: 1,
   },
   topcontent1: {
     width: '20%',
@@ -480,7 +486,7 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
   // search section
- keyboardcontainer: {
+  keyboardcontainer: {
     flex: 1,
   },
   searchContainer: {
@@ -507,7 +513,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     boxSizing: 'border-box',
     width: '100%',
-    backgroundColor: '#F9F9F9',
     height: '9%',
   },
   middlecontent: {
@@ -529,9 +534,9 @@ const styles = StyleSheet.create({
   },
   bottombox: {
     width: '100%',
-    height: '10%',
+    height: '11%',
     paddingLeft: 20,
-    backgroundColor: '#F9F9F9',
+    marginBottom:10
   },
   NearbyYourLocation: {
     color: '#000000',
@@ -747,6 +752,4 @@ const styles = StyleSheet.create({
     fontWeight: '400',
     height: 45,
   },
-
-  
 });
