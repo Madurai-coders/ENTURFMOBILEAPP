@@ -239,7 +239,7 @@ const Navbar = ({navigation}) => {
             />
           ),
         })}>
-        <Tab.Screen name="Gallery" component={GalleryPage} />
+        {/* <Tab.Screen name="Gallery" component={GalleryPage} /> */}
         <Tab.Screen name="Tournament" component={TournamentPage} />
         <Tab.Screen name="Home" component={HomePage} />
         <Tab.Screen name="History" component={HistoryPage} />

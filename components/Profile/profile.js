@@ -12,7 +12,7 @@ const Profile = () => {
  
 
   return (
-    <View style={{height: '100%', backgroundColor: '#F9F9F9'}}>
+    <View style={{height: '100%', backgroundColor: 'white'}}>
       <Header Title="Profile" />
       <View
         style={{
@@ -54,7 +54,7 @@ const Profile = () => {
         style={{
           justifyContent: 'space-around',
           flexDirection: 'row',
-          marginTop: 40,
+          marginTop: 20,
         }}>
         <View
           style={{

@@ -54,12 +54,12 @@ const Homepage = ({onPress, initialText, navigation}) => {
               Welcome Richards Flores
             </Text>
           </View>
-          <Image
+          {/* <Image
             style={styles.Group35315}
             source={{
               uri: 'https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/mhwg3kb6nm-6383%3A3034?alt=media&token=041e2ca5-fe54-4d4e-98ce-29a15d728879',
             }}
-          />
+          /> */}
           {/* <View style={{width: address ? '75%' : '47%'}}>
             <View>
               <Text style={styles._2972WestheimerRdSan}>
@@ -136,9 +136,7 @@ const Homepage = ({onPress, initialText, navigation}) => {
             <View style={styles.profilebox}>
               <Image
                 style={styles.Ellipse162}
-                source={{
-                  uri: 'https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/mhwg3kb6nm-6383%3A3042?alt=media&token=0ae05abb-17a3-41fb-86b9-4a4fa8856618',
-                }}
+                source={require('../../assets/Homepage/profile.png')}
               />
               <Text style={styles.Profile}>Profile</Text>
             </View>
