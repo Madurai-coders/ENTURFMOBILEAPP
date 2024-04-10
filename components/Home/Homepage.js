@@ -136,7 +136,7 @@ const Homepage = ({onPress, initialText, navigation}) => {
             <View style={styles.profilebox}>
               <Image
                 style={styles.Ellipse162}
-                source={require('../../assets/Homepage/profile.png')}
+                source={require('../../assets/Profile/profile.png')}
               />
               <Text style={styles.Profile}>Profile</Text>
             </View>

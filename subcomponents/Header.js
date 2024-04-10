@@ -1,19 +1,28 @@
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
+
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
 function Header(props) {
   return (
     <View style={styles.notification}>
-      <View style={{marginTop: 22, marginLeft: 15, width: '8%'}}>
-        <AntDesign name="left" size={24} color={'#000000'}></AntDesign>
-      </View>
-      <View
-        style={{
-          width: '80%',
-          marginTop: 5,
-        }}>
-        <Text style={styles.notificationtitle}>{props.Title}</Text>
-      </View>
+      <TouchableOpacity
+      onPress={props.onPress}
+        style={{flexDirection: 'row', justifyContent: 'center'}}>
+        <View
+          style={{
+            width: '5%',
+            alignSelf: 'center',
+          }}>
+          <AntDesign name="left" size={24} color={'black'}></AntDesign>
+        </View>
+        <View
+          style={{
+            width: '90%',
+            alignSelf: 'center',
+          }}>
+          <Text style={styles.notificationtitle}>{props.Title}</Text>
+        </View>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -25,6 +34,8 @@ const styles = StyleSheet.create({
     height: '8.5%',
     width: '100%',
     flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
     backgroundColor: '#FFFFFF',
     borderBottomEndRadius: 26,
     borderBottomStartRadius: 26,

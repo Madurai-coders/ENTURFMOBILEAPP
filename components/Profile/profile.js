@@ -25,13 +25,13 @@ const Profile = () => {
           marginLeft: 20,
         }}>
         <Image
-          source={require('../../assets/Homepage/profile.png')} // Specify the path to your image
+          source={require('../../assets/Profile/profile.png')} // Specify the path to your image
           style={{width: 60, height: 60}} // Adjust the width, height, and margin as needed
         />
 
         <View style={styles.overlay}>
           <Image
-            source={require('../../assets/Navbar/profilebg.png')} // Specify the path to your image
+            source={require('../../assets/Profile/profilebg.png')} // Specify the path to your image
             style={{width: 65, height: 65}} // Adjust the width, height, and margin as needed
           />
         </View>
@@ -63,7 +63,7 @@ const Profile = () => {
             flexDirection: 'column',
           }}>
           <Image
-            source={require('../../assets/Navbar/Notify.png')} // Specify the path to your image
+            source={require('../../assets/Profile/Notify.png')} // Specify the path to your image
             style={{width: 30, height: 32}} // Adjust the width, height, and margin as needed
           />
           <Text style={styles.iconname}>Notification</Text>
@@ -75,7 +75,7 @@ const Profile = () => {
             flexDirection: 'column',
           }}>
           <Image
-            source={require('../../assets/Navbar/Trmnt.png')} // Specify the path to your image
+            source={require('../../assets/Profile/Trmnt.png')} // Specify the path to your image
             style={{width: 30, height: 38}} // Adjust the width, height, and margin as needed
           />
           <Text style={styles.iconname}>Tournament</Text>
@@ -87,7 +87,7 @@ const Profile = () => {
             flexDirection: 'column',
           }}>
           <Image
-            source={require('../../assets/Navbar/Htry.png')} // Specify the path to your image
+            source={require('../../assets/Profile/Htry.png')} // Specify the path to your image
             style={{width: 30, height: 32}} // Adjust the width, height, and margin as needed
           />
           <Text style={styles.iconname}>History</Text>

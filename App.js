@@ -4,20 +4,17 @@ import {Text, View, Platform} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {NativeBaseProvider} from 'native-base';
-import Homepage from './components/Home/Homepage';
-import BookingPayment from './components/Booking-Payment/BookingPayment';
 import BookingDetail from './components/Booking/BookingDetail';
 import PaymentDetail from './components/Payment/PaymentDetail';
 import Navbar from './components/Navbar/Navbar';
-import Tournament from './components/Tournament/Tournament';
-import Notification from './components/Notification/Notification';
-import GalleryPage from './components/Gallery/Gallery';
-import TopNav from './subcomponents/Header';
 import SplashScreen from 'react-native-splash-screen';
 import Profile from './components/Profile/profile';
-import PersonelDetails from './components/Profile/PersonelDetails';
-import Address from './components/Profile/Address';
 import PersonelAddress from './components/Profile/PersonelAddress';
+// import GalleryTab from './core/GalleryTab';
+import LoginTab from './core/LoginTab';
+// import VideoOption from './components/Gallery/VideoOption';
+import SelectSport from './components/Gallery/SelectSport';
+
 const Stack = createStackNavigator();
 
 function App() {
@@ -28,7 +25,7 @@ function App() {
     <NativeBaseProvider>
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName="Navbar"
+          initialRouteName="LoginTab"
           screenOptions={{
             headerShown: false,
             cardStyle: {
@@ -38,7 +35,7 @@ function App() {
             }, // Set background color
           }}>
           <Stack.Screen
-            name="Navbar"
+            name="LoginTab"
             options={{
               headerStyle: {
                 elevation: 0,
@@ -47,22 +44,22 @@ function App() {
                 borderBottomWidth: 0,
               },
             }}
-            component={Navbar}></Stack.Screen>
-          <Stack.Screen name="Homepage" component={Homepage}></Stack.Screen>
+            component={LoginTab}></Stack.Screen>
+
+          <Stack.Screen name="Navbar" component={Navbar}></Stack.Screen>
+          <Stack.Screen name="SelectSport" component={SelectSport} />
+
+          {/* <Stack.Screen name="VideoOption" component={VideoOption} /> */}
+
           <Stack.Screen name="Profile" component={Profile}></Stack.Screen>
 
-          <Stack.Screen
-            name="BookingPayment"
-            component={BookingPayment}></Stack.Screen>
-          <Stack.Screen
-            name="Notification"
-            component={Notification}></Stack.Screen>
           <Stack.Screen
             name="BookingDetail"
             component={BookingDetail}></Stack.Screen>
           <Stack.Screen name="Detail" component={PaymentDetail}></Stack.Screen>
-          <Stack.Screen name="PersonelAddress" component={PersonelAddress}></Stack.Screen>
-
+          <Stack.Screen
+            name="PersonelAddress"
+            component={PersonelAddress}></Stack.Screen>
         </Stack.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>

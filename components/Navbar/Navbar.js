@@ -6,10 +6,10 @@ import {
   useIsFocused,
   useNavigation,
 } from '@react-navigation/native';
+import VideoOption from '../Gallery/VideoOption';
 import HomePage from '../Home/Homepage';
 import HistoryPage from '../Booking-Payment/BookingPayment';
 import NotificationPage from '../Notification/Notification';
-import GalleryPage from '../Gallery/Gallery';
 import TournamentPage from '../Tournament/Tournament';
 import {
   createDrawerNavigator,
@@ -20,6 +20,8 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
+import GalleryTab from '../../core/GalleryTab';
+
 const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
 
@@ -60,7 +62,7 @@ const Navbar = ({navigation}) => {
 
   const getImageSource = routeName => {
     switch (routeName) {
-      case 'Gallery':
+      case 'GalleryTab':
         return require('../../assets/Navbar/Gallery.png');
       case 'Tournament':
         return require('../../assets/Navbar/Tournament.png');
@@ -87,7 +89,7 @@ const Navbar = ({navigation}) => {
               <View style={{flexDirection: 'row'}}>
                 <View style={{flexDirection: 'row', alignItems: 'center'}}>
                   <Image
-                    source={require('../../assets/Homepage/profile.png')} // Specify the path to your image
+                    source={require('../../assets/Profile/profile.png')} // Specify the path to your image
                     style={{width: 35, height: 35, marginRight: 10}} // Adjust the width, height, and margin as needed
                   />
                 </View>
@@ -239,7 +241,7 @@ const Navbar = ({navigation}) => {
             />
           ),
         })}>
-        {/* <Tab.Screen name="Gallery" component={GalleryPage} /> */}
+        <Tab.Screen name="GalleryTab" component={GalleryTab} />
         <Tab.Screen name="Tournament" component={TournamentPage} />
         <Tab.Screen name="Home" component={HomePage} />
         <Tab.Screen name="History" component={HistoryPage} />
