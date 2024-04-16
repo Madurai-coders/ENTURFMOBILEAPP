@@ -13,7 +13,7 @@ const OTPSuccess = () => {
   };
   return (
     <View style={{height: '100%', width: '100%', backgroundColor: '#FFFFFF'}}>
-      <Header Title="Login" onPress={handleGoBack}></Header>
+      <Header Title="Login" onPress={handleGoBack} name="left"></Header>
       <View
         style={{height: '80%', justifyContent: 'center', alignItems: 'center'}}>
         <Image source={require('../../assets/Login/Success.png')} style={{width:100,height:100}}></Image>

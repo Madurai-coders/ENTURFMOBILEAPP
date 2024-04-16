@@ -5,9 +5,12 @@ import {
   TextInput,
   TouchableOpacity,
 } from 'react-native';
+import {Picker} from '@react-native-picker/picker';
 import Header from '../../subcomponents/Header';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {useNavigation} from '@react-navigation/native';
+import React, {useState} from 'react';
+import {color} from 'react-native-reanimated';
 
 const Personalinfo = () => {
   const navigation = useNavigation();
@@ -18,11 +21,14 @@ const Personalinfo = () => {
 
   const handleHomepage = () => {
     navigation.navigate('Navbar');
-
   };
+
+  const [selectedGender, setSelectedGender] = useState(''); // State to hold selected gender
+
+  const genders = ['Male', 'Female', 'Other'];
   return (
     <View style={{height: '100%', width: '100%', backgroundColor: '#FFFFFF'}}>
-      <Header Title="Login" onPress={handleGoBack}></Header>
+      <Header Title="Login" onPress={handleGoBack} name="left"></Header>
       <View style={{margin: 20}}>
         <Text style={styles.personaltxt}>Personal info</Text>
 
@@ -46,7 +52,7 @@ const Personalinfo = () => {
             />
           </View>
           <Text style={styles.phnlabel}>Gender</Text>
-          <View style={styles.phntextInputContainer}>
+          {/* <View style={styles.phntextInputContainer}>
             <TextInput
               style={styles.phntextInput}
               placeholder=""
@@ -59,6 +65,21 @@ const Personalinfo = () => {
               color="#BEBEBE"
               style={styles.phnicon}
             />
+          </View> */}
+          <View style={styles.genderinput}>
+            <Picker
+              selectedValue={selectedGender}
+              onValueChange={(itemValue, itemIndex) =>
+                setSelectedGender(itemValue)
+              }
+              style={styles.picker}
+              dropdownIconColor={'#BEBEBE'}>
+              <Picker.Item label="Select Gender" value=""  />
+
+              {genders.map((gender, index) => (
+                <Picker.Item key={index} label={gender} value={gender} />
+              ))}
+            </Picker>
           </View>
           <Text style={styles.phnlabel}>Date Of Birth</Text>
           <View style={styles.phntextInputContainer}>
@@ -113,6 +134,22 @@ const styles = StyleSheet.create({
   phnicon: {
     marginRight: 3,
     alignSelf: 'center',
+  },
+  genderinput: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderColor: '#777777',
+    borderWidth: 1,
+    borderRadius: 5,
+    width: '100%',
+    height: 45,
+  },
+  picker: {
+    flex: 1,
+    color: 'black',
+  },
+  downicon: {
+    marginLeft: 'auto',
   },
   button: {
     backgroundColor: '#79db81',

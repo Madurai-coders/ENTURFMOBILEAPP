@@ -13,7 +13,7 @@ function Header(props) {
             width: '5%',
             alignSelf: 'center',
           }}>
-          <AntDesign name="left" size={24} color={'black'}></AntDesign>
+          <AntDesign name={props.name} size={24} color={'black'}></AntDesign>
         </View>
         <View
           style={{

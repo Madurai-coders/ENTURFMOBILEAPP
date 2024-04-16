@@ -65,7 +65,7 @@ const OTP = () => {
   };
   return (
     <View style={{height: '100%', width: '100%', backgroundColor: '#FFFFFF'}}>
-      <Header Title="Login" onPress={handleGoBack}></Header>
+      <Header Title="Login" onPress={handleGoBack} name="left"></Header>
       <View style={{flexDirection: 'column', margin: 20}}>
         <Text style={styles.vcode}>Verification Code</Text>
         <Text style={styles.vcodedes}>

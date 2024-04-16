@@ -4,13 +4,15 @@ import {useNavigation} from '@react-navigation/native';
 
 const SelectSport = () => {
   const navigation = useNavigation();
-
+  const handleGoBack = () => {
+    navigation.goBack();
+  };
   const StartRecording = () => {
     navigation.navigate('StartRecording');
   };
   return (
     <View style={{height: '100%', width: '100%', backgroundColor: '#FFFFFF'}}>
-      <Header Title="Gallery"></Header>
+      <Header Title="Gallery" onPress={handleGoBack} name="left"></Header>
       <Text style={styles.choosetxt}>Choose Sports</Text>
       <View
         style={{
@@ -18,7 +20,7 @@ const SelectSport = () => {
           flexDirection: 'row',
           marginTop: 20,
         }}>
-        <TouchableOpacity onPress={StartRecording}>
+        <TouchableOpacity onPress={StartRecording} activeOpacity={0.1}>
           <View style={styles.sportsbox}>
             <Image
               source={require('../../assets/Gallery/Football.png')}
@@ -59,7 +61,7 @@ const styles = StyleSheet.create({
     paddingBottom: 17,
     borderRadius: 17,
     backgroundColor: 'white',
-    elevation: 4,
+    elevation: 1,
     alignItems: 'center',
   },
   fbimg: {
