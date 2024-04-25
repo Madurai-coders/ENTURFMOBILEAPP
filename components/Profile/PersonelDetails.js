@@ -45,6 +45,7 @@ const PersonelDetails = ({navigation, onPress}) => {
   return (
     <>
       <View style={{backgroundColor: 'white', height: '100%'}}>
+        
         <View style={styles.container}>
           <AnimatedTextInput
             style={styles.textInput}

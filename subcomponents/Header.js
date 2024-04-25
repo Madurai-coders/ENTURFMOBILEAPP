@@ -31,7 +31,7 @@ export default Header;
 
 const styles = StyleSheet.create({
   notification: {
-    height: '8.5%',
+    height: 60,
     width: '100%',
     flexDirection: 'row',
     justifyContent: 'center',

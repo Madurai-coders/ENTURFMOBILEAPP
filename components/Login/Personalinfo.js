@@ -38,7 +38,6 @@ const Personalinfo = () => {
             <TextInput
               style={styles.phntextInput}
               placeholder="Enter First Name"
-              keyboardType="phone-pad"
               placeholderTextColor="#E5E5E5"
             />
           </View>
@@ -47,7 +46,6 @@ const Personalinfo = () => {
             <TextInput
               style={styles.phntextInput}
               placeholder="Enter Last Name"
-              keyboardType="phone-pad"
               placeholderTextColor="#E5E5E5"
             />
           </View>
@@ -125,6 +123,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 5,
     width: '100%',
+    position:"relative"
   },
   phntextInput: {
     flex: 1,
@@ -143,6 +142,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     width: '100%',
     height: 45,
+    position:"relative"
   },
   picker: {
     flex: 1,

@@ -10,6 +10,7 @@ const SelectSport = () => {
   const StartRecording = () => {
     navigation.navigate('StartRecording');
   };
+
   return (
     <View style={{height: '100%', width: '100%', backgroundColor: '#FFFFFF'}}>
       <Header Title="Gallery" onPress={handleGoBack} name="left"></Header>
@@ -20,7 +21,10 @@ const SelectSport = () => {
           flexDirection: 'row',
           marginTop: 20,
         }}>
-        <TouchableOpacity onPress={StartRecording} activeOpacity={0.1}>
+        <TouchableOpacity
+          onPress={StartRecording}
+          activeOpacity={0.1}
+          style={styles.touchable}>
           <View style={styles.sportsbox}>
             <Image
               source={require('../../assets/Gallery/Football.png')}
@@ -29,7 +33,7 @@ const SelectSport = () => {
             <Text style={styles.fbtxt}>Football</Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity style={styles.touchable} activeOpacity={0.1}>
           <View style={styles.sportsbox}>
             <Image
               source={require('../../assets/Gallery/Cricket.png')}
@@ -45,6 +49,17 @@ const SelectSport = () => {
 
 export default SelectSport;
 const styles = StyleSheet.create({
+  touchable: {
+    width: 152,
+    height: 152,
+    paddingLeft: 29,
+    paddingRight: 36,
+    paddingTop: 16,
+    paddingBottom: 17,
+    borderRadius: 17,
+    elevation: 1,
+    backgroundColor: 'white',
+  },
   choosetxt: {
     color: '#1D1D1D',
     fontSize: 20,
@@ -53,17 +68,10 @@ const styles = StyleSheet.create({
     marginTop: 30,
   },
   sportsbox: {
-    width: 152,
-    height: 152,
-    paddingLeft: 29,
-    paddingRight: 36,
-    paddingTop: 16,
-    paddingBottom: 17,
-    borderRadius: 17,
-    backgroundColor: 'white',
-    elevation: 1,
     alignItems: 'center',
+    justifyContent: 'center',
   },
+
   fbimg: {
     width: 100,
     height: 100,
@@ -71,7 +79,7 @@ const styles = StyleSheet.create({
   fbtxt: {
     color: 'black',
     fontWeight: 400,
-    lineHeight:25,
-    alignSelf:"center"
+    lineHeight: 25,
+    alignSelf: 'center',
   },
 });

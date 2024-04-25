@@ -49,7 +49,7 @@ const PersonelAddress = ({navigation, route}) => {
               marginRight:15,
               backgroundColor: '#E5E5E5',
               color: 'rgba(30, 30, 30, 1)',
-              height: '8%',
+              height: 45,
               shadowOpacity: 0,
               shadowColor: 'white',
               borderBottomEndRadius: 32,
